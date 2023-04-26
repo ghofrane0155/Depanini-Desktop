@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.participate.DetailEventController">
+   <children>
+      <Pane prefHeight="86.0" prefWidth="602.0" style="-fx-background-color: #30385D;">
+         <children>
+            <Label layoutX="171.0" layoutY="26.0" text="Détail de l'Evenement :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="exit" fitHeight="40.0" fitWidth="45.0" layoutX="25.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-youssef%20(1)/Depanini-PIdev-SprintJAVA-2223-youssef/DeskTopApp/src/GUI/images/icons8-left-24.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="178.0" layoutY="107.0" prefHeight="200.0" prefWidth="247.0" styleClass="bg-white" stylesheets="@../GUI/css/styling.css">
+         <children>
+            <ImageView fx:id="imgEvent" fitHeight="146.0" fitWidth="229.0" layoutX="9.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="nomevenement" layoutX="281.0" layoutY="331.0" text="NOM" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="399.0" prefHeight="21.0" prefWidth="186.0" text="DATE DEBUT:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="399.0" prefHeight="21.0" prefWidth="168.0" text="DATE FIN:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="oraganisateurEvent" layoutX="228.0" layoutY="361.0" text="ORGANISATEUR" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="484.0" prefHeight="21.0" prefWidth="186.0" text="NOMBRE LIMITE :" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="524.0" prefHeight="21.0" prefWidth="186.0" text="DESCRIPTION :" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="description" layoutX="104.0" layoutY="545.0" prefHeight="69.0" prefWidth="360.0" />
+      <Label fx:id="nbrlim" layoutX="229.0" layoutY="485.0" prefHeight="21.0" prefWidth="186.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="datedeb" layoutX="62.0" layoutY="429.0" prefHeight="21.0" prefWidth="186.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="datefin" layoutX="356.0" layoutY="429.0" prefHeight="21.0" prefWidth="186.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="329.0" layoutY="485.0" prefHeight="28.0" prefWidth="48.0" text="PRIX:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="prix" layoutX="391.0" layoutY="484.0" prefHeight="28.0" prefWidth="48.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

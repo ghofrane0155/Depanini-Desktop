@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="950.0" stylesheets="@../../GUI/css/styling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.event.AffichageController">
+   <children>
+      <Pane prefHeight="553.0" prefWidth="270.0" styleClass="side_ankerpane" stylesheets="@../GUI/css/styling.css">
+         <children>
+            <Button fx:id="btn_creer2" layoutX="3.0" layoutY="293.0" mnemonicParsing="false" onAction="#ChangeScene1" onMouseClicked="#getAdd" prefHeight="42.0" prefWidth="263.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="CREER" textAlignment="RIGHT" textFill="#f7f7f7">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="23.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GUI/images/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_aff2" layoutX="6.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#refreshTable" prefHeight="49.0" prefWidth="263.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="LES EVENEMENTS" textAlignment="RIGHT" textFill="#f7f7f7" underline="true">
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="34.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GUI/images/evenement.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_modif" layoutX="4.0" layoutY="335.0" mnemonicParsing="false" onAction="#ChangeScene2" prefHeight="42.0" prefWidth="263.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="MODIFIER " textAlignment="RIGHT" textFill="#f7f7f7">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GUI/images/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_dash1" layoutX="3.0" layoutY="426.0" mnemonicParsing="false" onAction="#tickets" prefHeight="44.0" prefWidth="263.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="LES TICKETS" textAlignment="RIGHT" textFill="#f7f7f7">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GUI/images/ticketttt.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TableView fx:id="eventstable" layoutX="287.0" layoutY="150.0" prefHeight="301.0" prefWidth="661.0">
+        <columns>
+          <TableColumn fx:id="colnom" prefWidth="70.39996337890625" text="NOM" />
+            <TableColumn fx:id="colorg" prefWidth="88.0" text="ORGANISATEUR" />
+            <TableColumn fx:id="coldeb" text="DATE DEBUT" />
+            <TableColumn fx:id="colfin" prefWidth="66.4000244140625" text="DATE FIN" />
+            <TableColumn fx:id="collieu" prefWidth="78.4000244140625" text="LIEU EVENT" />
+            <TableColumn fx:id="colnbr" prefWidth="82.0" text="NBR LIMITE" />
+            <TableColumn fx:id="coldesc" prefWidth="121.0" text="DESCRIPTION" />
+            <TableColumn fx:id="prix" minWidth="0.0" prefWidth="70.0" text="prix" />
+        </columns>
+      </TableView>
+      <Label layoutX="389.0" layoutY="21.0" prefHeight="47.0" prefWidth="192.0" text="LISTE DES " textAlignment="CENTER" textFill="#ff6051" underline="true">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="543.0" layoutY="21.0" prefHeight="47.0" prefWidth="246.0" text="EVENEMENTS " textAlignment="CENTER" textFill="#ff6051" underline="true">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btncons" layoutX="389.0" layoutY="473.0" onAction="#ChangeScene4" styleClass="nav_btn" stylesheets="@../../GUI/css/styling.css" text="CONSULTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GUI/GUI/images/billet.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Text fill="#f4d530" layoutX="570.0" layoutY="507.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES TICKETS ACHETEES " wrappingWidth="319.79992675781244">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="63.0" fitWidth="104.0" layoutX="832.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GUI/images/logo.final.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="139.0" fitWidth="141.0" layoutX="69.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GUI/images/pdfpro-photoaidcom-cropped.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="34.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Responsable Evenements" textAlignment="CENTER" wrappingWidth="206.35157600045204">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="41.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nour el imen Hassine" wrappingWidth="206.3515625">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnmod" layoutX="298.0" layoutY="82.0" mnemonicParsing="false" onAction="#modifevent" style="-fx-background-color: 000000;">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GUI/images/arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="delid" layoutX="351.0" layoutY="82.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="48.0" style="-fx-background-color: 000000;">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GUI/images/deleterouge.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="search" layoutX="704.0" layoutY="87.0" onKeyTyped="#recherche" prefHeight="43.0" prefWidth="214.0" promptText="recherche" />
+      <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="875.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GUI/images/search.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_dash" layoutX="-1.0" layoutY="248.0" mnemonicParsing="false" onAction="#dash" prefHeight="44.0" prefWidth="270.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="DASHBOARD" textAlignment="RIGHT" textFill="#f7f7f7">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../GUI/images/menu.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

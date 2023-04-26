@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #E0E2E4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.User.ResetController">
+   <children>
+      <AnchorPane layoutX="228.0" layoutY="104.0" opacity="0.8" prefHeight="340.0" prefWidth="401.0" style="-fx-background-color: #ffff;">
+         <children>
+            <Label layoutX="28.0" layoutY="27.0" prefHeight="30.0" prefWidth="351.0" text="Choisissez un nouveau mot de passe">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="243.0" layoutY="277.0" onAction="#on_click_continue" prefHeight="37.0" prefWidth="106.0" style="-fx-background-color: #456CE3; -fx-background-radius: 5 5 5 5;" text="Continuer" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="27.0" layoutY="96.0" prefHeight="30.0" prefWidth="351.0" text="Créez un mot de passe d'au moins 8 caractères.">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="126.0" prefHeight="30.0" prefWidth="351.0" text="Un mot de passe fort est une combinaison de lettres">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Line endX="280.0" layoutX="120.0" layoutY="75.0" startX="-115.0" />
+            <JFXButton layoutX="115.0" layoutY="277.0" onAction="#on_click_Annuler" prefHeight="37.0" prefWidth="106.0" style="-fx-background-color: #808080; -fx-background-radius: 5 5 5 5;" text="Ignorer" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField fx:id="tfpass" layoutX="31.0" layoutY="178.0" prefHeight="46.0" prefWidth="328.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-1.0" prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #ffff;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="123.0" layoutX="20.0" layoutY="9.0" onMouseClicked="#on_click_depanini">
+               <image>
+                  <Image url="@../images/logo2.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

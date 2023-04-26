@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.reclamation.FXMLUpdateReclamationController">
+   <children>
+      <Pane prefHeight="86.0" prefWidth="602.0" style="-fx-background-color: #30385D;">
+         <children>
+            <Label layoutX="119.0" layoutY="26.0" text="Mise a jour de la reclamation n°:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_id_recl" layoutX="489.0" layoutY="26.0" textFill="#ff0404">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="exit" fitHeight="40.0" fitWidth="45.0" layoutX="23.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-left-24.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <VBox layoutX="42.0" layoutY="86.0" prefHeight="73.0" prefWidth="215.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="163.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="78.0" text="Email : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="email1" prefHeight="16.0" prefWidth="163.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="36.0" layoutY="257.0" prefHeight="73.0" prefWidth="215.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="163.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="78.0" text="Type : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="type_reclamation" prefHeight="16.0" prefWidth="163.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="36.0" layoutY="340.0" prefHeight="99.0" prefWidth="286.0">
+         <children>
+            <HBox prefHeight="51.0" prefWidth="386.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="87.0" text="Description">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextArea fx:id="description" prefHeight="99.0" prefWidth="309.0" wrapText="true">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="18.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+      <VBox layoutX="375.0" layoutY="86.0" prefHeight="73.0" prefWidth="163.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="163.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="126.0" text="Etat reclamation : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <ChoiceBox fx:id="etat_reclamation" prefHeight="25.0" prefWidth="173.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="375.0" layoutY="235.0" prefHeight="73.0" prefWidth="163.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="163.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="126.0" text="Date de résolution :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="error_date" prefHeight="69.0" prefWidth="163.0" textFill="#ff0404">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date_fin_reclamation" onAction="#getdate" prefWidth="163.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="36.0" layoutY="171.0" prefHeight="73.0" prefWidth="163.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="163.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="126.0" text="Date de création  :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <DatePicker fx:id="date_debut_reclamation" />
+         </children>
+      </VBox>
+      <Button fx:id="btn_update" layoutX="375.0" layoutY="397.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="183.0" style="-fx-background-color: #30385D;" text="Mettre a jour" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-rafraîchir-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

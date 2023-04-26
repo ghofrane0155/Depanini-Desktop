@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="parentContainer" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.participate.ParticipateController">
+   <children>
+      <AnchorPane fx:id="rootPane" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="983.0">
+         <children>
+            <AnchorPane layoutY="-1.0" prefHeight="553.0" prefWidth="220.0">
+               <children>
+                  <VBox prefHeight="567.0" prefWidth="220.0" style="-fx-background-color: #30385D;">
+                     <children>
+                        <VBox prefHeight="148.0" prefWidth="225.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <ImageView fitHeight="67.0" fitWidth="134.0" onMouseClicked="#depanini_clicked" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo.final.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="118.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="60.0" right="60.0" top="15.0" />
+                                 </VBox.margin>
+                                 <image>
+                                    <Image url="@../images/admin.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="loginid" alignment="CENTER" maxWidth="200.0" text="Nour123" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" />
+                                 </VBox.margin>
+                                 <opaqueInsets>
+                                    <Insets left="30.0" right="30.0" />
+                                 </opaqueInsets>
+                              </Label>
+                              <Label fx:id="tfnom_prenom1" alignment="CENTER" layoutX="40.0" layoutY="125.0" maxWidth="236.0" prefHeight="69.0" prefWidth="220.0" text="(Role)" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets left="30.0" right="30.0" />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="284.0" prefWidth="220.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-ghofrane/Depanini-PIdev-SprintJAVA-2223-ghofrane/DeskTopApp/src/Utils/styles.css">
+                                 <children>
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#home" prefHeight="42.0" prefWidth="261.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="Home" textFill="WHITE">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../GUI/images/home.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#prifile_clicked" prefHeight="42.0" prefWidth="261.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="Profile       " textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-ghofrane/Depanini-PIdev-SprintJAVA-2223-ghofrane/DeskTopApp/src/GUI/images/user.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-ghofrane/Depanini-PIdev-SprintJAVA-2223-ghofrane/DeskTopApp/src/Utils/styles.css">
+                                 <children>
+                                    <JFXButton fx:id="events" alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#events_clicked" prefHeight="42.0" prefWidth="244.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="Les evenements" textAlignment="CENTER" textFill="WHITE" underline="true">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../GUI/images/view.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-ghofrane/Depanini-PIdev-SprintJAVA-2223-ghofrane/DeskTopApp/src/Utils/styles.css">
+                                 <children>
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#notif_clicked" prefHeight="42.0" prefWidth="261.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="Panier" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../GUI/images/shopping-basket.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" onAction="#settings_clicked" prefHeight="73.0" prefWidth="220.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="Settings  " textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/Depanini-PIdev-SprintJAVA-2223-ghofrane/Depanini-PIdev-SprintJAVA-2223-ghofrane/DeskTopApp/src/GUI/images/setting.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Pane layoutX="240.0" layoutY="18.0" prefHeight="273.0" prefWidth="694.0" styleClass="bg-white" stylesheets="@../../GUI/css/styling.css">
+               <children>
+                  <TableView fx:id="eventstable" layoutX="15.0" layoutY="13.0" onMouseClicked="#selectEventShow" prefHeight="248.0" prefWidth="597.0">
+                     <columns>
+                        <TableColumn fx:id="colnom" prefWidth="104.0" text="NOM" />
+                        <TableColumn fx:id="colorg" prefWidth="102.0" text="ORGANISATEUR" />
+                        <TableColumn fx:id="coldeb" prefWidth="99.0" text="DEBUT" />
+                        <TableColumn fx:id="colfin" prefWidth="77.0" text="FIN" />
+                        <TableColumn fx:id="collieu" prefWidth="91.0" text="LIEU EVENT" />
+                        <TableColumn fx:id="coldesc" prefWidth="123.0" text="DESCRIPTION" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="details" layoutX="612.0" layoutY="197.0" mnemonicParsing="false" onAction="#details" prefHeight="66.0" prefWidth="77.0" styleClass="nav_btn" stylesheets="@../../GUI/css/styling.css">
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/info.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text layoutX="623.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pour plus d'info" textAlignment="CENTER" wrappingWidth="54.00000715255737">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="240.0" layoutY="308.0" prefHeight="223.0" prefWidth="694.0" styleClass="bg-white" stylesheets="@../../GUI/css/styling.css">
+               <children>
+                  <Pane fx:id="eventImage" layoutY="1.0" prefHeight="223.0" prefWidth="177.0" styleClass="eventImage" stylesheets="@../GUI/css/styling.css">
+                     <children>
+                        <ImageView fx:id="imageEvent" fitHeight="110.0" fitWidth="160.0" layoutX="11.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/event1.jpg" />
+                           </image></ImageView>
+                        <Label fx:id="Eventnom" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="155.0" prefHeight="21.0" prefWidth="169.0" text="Nom evenement" textAlignment="CENTER" />
+                        <Label fx:id="prixEvent" alignment="CENTER" layoutX="75.0" layoutY="183.0" prefHeight="21.0" prefWidth="39.0" textAlignment="CENTER" />
+                        <Label layoutX="39.0" layoutY="183.0" text="Tarif :" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="268.0" layoutY="70.0" prefHeight="42.0" prefWidth="87.0" text="Quantité :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="438.0" layoutY="70.0" prefHeight="42.0" prefWidth="87.0" text="Prix total :">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="194.0" layoutY="14.0" text="Acheter Ticket :">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="spinner1" layoutX="273.0" layoutY="124.0" onMouseClicked="#getSpinnerValue" prefHeight="31.0" prefWidth="77.0" stylesheets="@../GUI/css/styling.css" />
+                  <Label fx:id="prix_tot" contentDisplay="RIGHT" layoutX="438.0" layoutY="125.0" prefHeight="31.0" prefWidth="77.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="panier" layoutX="486.0" layoutY="155.0" mnemonicParsing="false" onAction="#creerTicket" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="ajouter au panier">
+                     <graphic>
+                        <ImageView fitHeight="52.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/shopping-bag.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clear" layoutX="428.0" layoutY="164.0" mnemonicParsing="false" onAction="#ClearTicket" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/delete2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label layoutX="520.0" layoutY="125.0" text="DT">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="67.0" fitWidth="134.0" layoutX="574.0" layoutY="-2.0" onMouseClicked="#depanini_clicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.final.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

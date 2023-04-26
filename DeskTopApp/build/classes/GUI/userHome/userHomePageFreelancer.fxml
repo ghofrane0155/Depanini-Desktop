@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1150.0" stylesheets="@../../GUI/css/styling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.userHome.UserHomePageFreelancerController">
+   <children>
+      <AnchorPane layoutX="678.0" layoutY="73.0" prefHeight="282.0" prefWidth="448.0" styleClass="bg-white" stylesheets="@../../GUI/css/styling.css">
+         <children>
+            <VBox fx:id="vboxParent" layoutX="13.0" layoutY="2.0" prefHeight="280.0" prefWidth="423.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="386.0">
+                     <children>
+                        <MediaView fx:id="mvVideo" fitHeight="200.0" fitWidth="350.0" layoutX="13.0" />
+                     </children>
+                  </Pane>
+                  <Slider fx:id="sliderTime" prefHeight="28.0" prefWidth="382.0" style="-fx-cursor: hand;">
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Slider>
+                  <HBox fx:id="hboxControls" alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="376.0">
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                     <children>
+                        <Button fx:id="buttonPPR" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-cursor: hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" textAlignment="CENTER">
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                        </Button>
+                        <HBox fx:id="hboxVolume">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label fx:id="labelVolume" prefHeight="21.0" prefWidth="42.0" style="-fx-cursor: hand;">
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Slider fx:id="sliderVolume" max="1.0" prefHeight="30.0" prefWidth="121.0" style="-fx-cursor: hand;" />
+                              <Label fx:id="labelCurrentTime" prefHeight="21.0" prefWidth="59.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="labelTotalTime" prefHeight="21.0" prefWidth="69.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="103.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="labelFullScrene" prefHeight="13.0" prefWidth="39.0" style="-fx-cursor: hand;">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelSpeed" prefHeight="13.0" prefWidth="39.0" style="-fx-cursor: hand;">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children></HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="258.0" layoutY="73.0" prefHeight="282.0" prefWidth="387.0" styleClass="bg-white" stylesheets="@../css/styling.css">
+         <children>
+            <GridPane fx:id="container" layoutX="19.0" layoutY="50.0" prefHeight="212.0" prefWidth="350.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="191.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="262.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Label layoutX="103.0" layoutY="18.0" text="TOP 5 Utilisateurs">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="263.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-stars-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="257.0" layoutY="365.0" prefHeight="331.0" prefWidth="869.0" styleClass="bg-white" stylesheets="@../css/styling.css">
+         <children>
+            <ScrollPane layoutX="11.0" layoutY="22.0" prefHeight="287.0" prefWidth="734.0">
+               <content>
+                  <VBox fx:id="pnItems" prefHeight="284.0" prefWidth="730.0" spacing="5.0" style="-fx-background-color: #172948;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Button fx:id="seemore" layoutX="766.0" layoutY="263.0" mnemonicParsing="false" onAction="#evenement" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="voir plus &gt;&gt;" underline="true" />
+         </children></AnchorPane>
+      <Pane layoutY="62.0" prefHeight="640.0" prefWidth="245.0">
+         <children>
+            <Text fill="#456ce3" layoutX="56.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENUE DANS L'ESPACE DES FREELANCERS" textAlignment="CENTER" wrappingWidth="135.03076171875">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="200.0" fitWidth="214.0" layoutX="23.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Connected%20world-amico.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="20.0" layoutY="352.0" prefHeight="240.0" prefWidth="208.0">
+               <children>
+                  <Text fill="#456ce3" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPOSER DES" textAlignment="CENTER" wrappingWidth="207.03076171875">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Button fx:id="offre" mnemonicParsing="false" onAction="#offre" prefHeight="31.0" prefWidth="227.0" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="OFFRES">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="service" mnemonicParsing="false" onAction="#service" prefHeight="31.0" prefWidth="215.0" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="SERVICES">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane fx:id="paneslide" layoutY="-1.0" prefHeight="710.0" prefWidth="245.0" styleClass="side_ankerpane" stylesheets="@../css/styling.css">
+         <children>
+            <Hyperlink layoutX="45.0" layoutY="662.0" onAction="#fbLink">
+               <graphic>
+                  <ImageView fx:id="fb" fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+                     <image>
+                        <Image url="@../images/icons8-facebook-40.png" />
+                     </image>
+                     
+                                          </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink layoutX="88.0" layoutY="657.0" onAction="#instaLink" prefHeight="23.0" prefWidth="36.0">
+               <graphic>
+                  <ImageView fx:id="insta" fitHeight="35.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+                     <image>
+                        <Image url="@../images/icons8-instagram-48.png" />
+                     </image>
+                     
+                                          </ImageView>
+               </graphic>
+            </Hyperlink>
+            <Hyperlink layoutX="142.0" layoutY="658.0" onAction="#mailLink" prefHeight="23.0" prefWidth="30.0">
+               <graphic>
+                  <ImageView fx:id="mail" fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+                     <image>
+                        <Image url="@../images/icons8-gmail-logo-48.png" />
+                     </image>
+                     
+                                          </ImageView>
+               </graphic>
+            </Hyperlink>
+            <VBox layoutX="14.0" layoutY="82.0" prefHeight="465.0" prefWidth="215.0">
+               <children>
+                  <ImageView fx:id="tfimg" fitHeight="102.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+                     <image>
+                        <Image url="@../images/icons8-customer-100.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="50.0" top="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="tfnom_prenom" alignment="CENTER" contentDisplay="CENTER" maxWidth="200.0" text="Nom et Prenom" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets left="30.0" right="30.0" />
+                     </opaqueInsets>
+                  </Label>
+                  <JFXButton graphicTextGap="10.0" onAction="#prifile_clicked" prefHeight="70.0" prefWidth="208.0" style="-fx-cursor: Hand;" styleClass="selected" stylesheets="@../css/styles.css" text="Profile       " textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                                             <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="10.0" onAction="#password_clicked" prefHeight="70.0" prefWidth="205.0" style="-fx-cursor: Hand;" styleClass="selected" stylesheets="@../css/styles.css" text="Password" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/key.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                                             <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="10.0" onAction="#settings_clicked" prefHeight="70.0" prefWidth="205.0" style="-fx-cursor: Hand;" styleClass="selected" stylesheets="@../css/styles.css" text="Settings  " textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/setting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                                             <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton graphicTextGap="10.0" onAction="#notif_clicked" prefHeight="70.0" prefWidth="214.0" style="-fx-cursor: Hand;" styleClass="selected" stylesheets="@../css/styles.css" text="Notifications" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/notif.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     
+                                             <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <AnchorPane prefHeight="62.0" prefWidth="1150.0" styleClass="bg-white" stylesheets="@../../GUI/css/styling.css">
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="104.0" layoutX="96.0" onMouseClicked="#depanini_clicked" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+               <image>
+                  <Image url="@../../GUI/images/logo.final.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="265.0" layoutY="15.0" mnemonicParsing="false" onAction="#acc" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Acceuil" underline="true" />
+            <Button fx:id="reclamation" layoutX="343.0" layoutY="14.0" mnemonicParsing="false" onAction="#reclamation" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="reclamation" />
+            <Button layoutX="552.0" layoutY="14.0" mnemonicParsing="false" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Produits" />
+            <Button fx:id="Events" layoutX="452.0" layoutY="14.0" mnemonicParsing="false" onAction="#EventsList" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Evénements" />
+            <Button layoutX="997.0" layoutY="9.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="114.0" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../../GUI/css/styling.css" text="Panier">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GUI/images/shopping-bag.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="bar11" layoutX="8.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#run1" prefHeight="40.0" prefWidth="34.0" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../../GUI/css/styling.css" />
+            <Button fx:id="bar22" layoutX="8.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#run2" prefHeight="40.0" prefWidth="34.0" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../../GUI/css/styling.css" />
+            <JFXButton fx:id="bar2" layoutX="2.0" layoutY="8.0" onMouseClicked="#run2" prefHeight="40.0" prefWidth="50.0">
+               <graphic>
+                  <ImageView fitHeight="68.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GUI/images/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="bar1" layoutX="2.0" layoutY="9.0" onMouseClicked="#run1" prefHeight="40.0" prefWidth="51.0">
+               <graphic>
+                  <ImageView fitHeight="68.0" fitWidth="30.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GUI/images/menu2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <TextField fx:id="search" layoutX="717.0" layoutY="9.0" prefHeight="35.0" prefWidth="203.0" promptText="search" style="-fx-cursor: Hand;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="892.0" layoutY="19.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8_Search_52px.png" />
+               </image>
+               
+            </ImageView>
+            <Button fx:id="ring" layoutX="947.0" layoutY="12.0" mnemonicParsing="false" onAction="#notificationEvent" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: ffffff;" stylesheets="@../css/styling.css">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: Hand;">
+                     <image>
+                        <Image url="@../images/bell.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="feedback" layoutX="626.0" layoutY="14.0" mnemonicParsing="false" onAction="#feedback" style="-fx-cursor: Hand;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="FeedBack" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

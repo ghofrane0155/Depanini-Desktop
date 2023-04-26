@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1150.0" stylesheets="@../../GUI/css/styling.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.event.AffichageController">
+   <children>
+      <Pane prefHeight="710.0" prefWidth="255.0" styleClass="side_ankerpane" stylesheets="@../GUI/css/styling.css">
+         <children>
+            <VBox layoutX="-2.0" layoutY="-2.0" prefHeight="710.0" prefWidth="255.0">
+               <children>
+                  <ImageView fx:id="tfimg" fitHeight="99.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../GUI/images/pdfpro-photoaidcom-cropped.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="90.0" top="50.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Text fx:id="tfnom" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nour el imen Hassine" textAlignment="CENTER" wrappingWidth="253.3515625">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Responsable Evenements" textAlignment="CENTER" wrappingWidth="245.35157600045204">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="btn_dash" graphicTextGap="30.0" mnemonicParsing="false" onAction="#dash" prefHeight="70.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="DASHBOARD" textAlignment="RIGHT" textFill="#f7f7f7">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/menu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btn_creer2" graphicTextGap="60.0" mnemonicParsing="false" onAction="#ChangeScene1" onMouseClicked="#getAdd" prefHeight="42.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="CREER" textAlignment="RIGHT" textFill="#f7f7f7">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="23.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btn_modif" graphicTextGap="40.0" mnemonicParsing="false" onAction="#ChangeScene2" prefHeight="42.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="MODIFIER " textAlignment="RIGHT" textFill="#f7f7f7">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btn_aff2" mnemonicParsing="false" onMouseClicked="#refreshTable" prefHeight="49.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="LES EVENEMENTS" textAlignment="RIGHT" textFill="#f7f7f7" underline="true">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="34.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/view.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="btn_dash1" graphicTextGap="35.0" mnemonicParsing="false" onAction="#tickets" prefHeight="44.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../GUI/css/styling.css" text="LES TICKETS" textAlignment="RIGHT" textFill="#f7f7f7">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="39.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ticketttt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="back" graphicTextGap="40.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="255.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="RETOUR" textAlignment="CENTER" textFill="WHITE">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/arrow2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <TableView fx:id="eventstable" layoutX="283.0" layoutY="282.0" prefHeight="357.0" prefWidth="832.0">
+        <columns>
+          <TableColumn fx:id="colnom" prefWidth="83.0" text="NOM" />
+            <TableColumn fx:id="colorg" prefWidth="101.0" text="ORGANISATEUR" />
+            <TableColumn fx:id="coldeb" prefWidth="101.0" text="DATE DEBUT" />
+            <TableColumn fx:id="colfin" prefWidth="83.0" text="DATE FIN" />
+            <TableColumn fx:id="collieu" prefWidth="94.0" text="LIEU EVENT" />
+            <TableColumn fx:id="colnbr" prefWidth="94.0" text="NBR LIMITE" />
+            <TableColumn fx:id="coldesc" prefWidth="187.0" text="DESCRIPTION" />
+            <TableColumn fx:id="prix" minWidth="0.0" prefWidth="88.0" text="prix" />
+        </columns>
+      </TableView>
+      <Label layoutX="538.0" layoutY="33.0" prefHeight="47.0" prefWidth="192.0" text="LISTE DES " textAlignment="CENTER" textFill="#ff6051" underline="true">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="666.0" layoutY="87.0" prefHeight="47.0" prefWidth="246.0" text="EVENEMENTS " textAlignment="CENTER" textFill="#ff6051" underline="true">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="63.0" fitWidth="104.0" layoutX="1034.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GUI/images/logo.final.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="delid" layoutX="758.0" layoutY="222.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="48.0" style="-fx-background-color: 000000;">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../GUI/images/deleterouge.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="search" layoutX="828.0" layoutY="225.0" onKeyTyped="#recherche" prefHeight="43.0" prefWidth="268.0" promptText="recherche" />
+      <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="1055.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../GUI/images/search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="240.0" fitWidth="230.0" layoutX="283.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/conference.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

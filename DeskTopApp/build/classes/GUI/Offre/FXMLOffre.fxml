@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="704.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Offre.FXMLOffreController">
+   <children>
+      <AnchorPane layoutX="-5.0" prefHeight="710.0" prefWidth="301.0" style="-fx-background-color: #30385D;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="91.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/offre.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="278.0" fitWidth="281.0" layoutX="-22.0" layoutY="-65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/logoo.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="6.0" layoutY="213.0" prefHeight="380.0" prefWidth="295.0">
+               <children>
+                  <Button fx:id="AjouterScene" graphicTextGap="30.0" mnemonicParsing="false" onAction="#ChangeScene1" prefHeight="91.0" prefWidth="316.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Ajouter une offre" textFill="#ff6051">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="54.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/ajout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button graphicTextGap="30.0" mnemonicParsing="false" onAction="#ChangeScene2" prefHeight="110.0" prefWidth="318.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Modifier une offre" textFill="#ff6051">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="82.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/modifier.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button graphicTextGap="30.0" mnemonicParsing="false" onAction="#ChangeScene4" prefHeight="103.0" prefWidth="297.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Supprimer une offre" textFill="#ff6051">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="70.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/supprimer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button graphicTextGap="30.0" mnemonicParsing="false" onAction="#ChangeScene3" prefHeight="101.0" prefWidth="305.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Afficher les offres" textFill="#ff6051">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/afficher.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="retour" graphicTextGap="40.0" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" onAction="#retour" prefHeight="101.0" prefWidth="305.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Retour" textFill="#ff6051">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/arrow2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label layoutX="409.0" layoutY="74.0" prefHeight="82.0" prefWidth="689.0" text="BIENVENUE DANS L'ESPACE DES OFFRES  " textFill="#30385d">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="657.0" fitWidth="682.0" layoutX="382.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Remote%20meeting-pana.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="info" layoutX="988.0" layoutY="571.0" mnemonicParsing="false" onAction="#chatbot" prefHeight="127.0" prefWidth="150.0" styleClass="nav_btn" stylesheets="@../css/styling.css">
+         <graphic>
+            <ImageView fitHeight="130.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/331590241_1225873818037264_6558798771625249309_n.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="info1" layoutX="306.0" layoutY="569.0" mnemonicParsing="false" onAction="#sound" prefHeight="127.0" prefWidth="150.0" styleClass="nav_btn" stylesheets="@../css/styling.css">
+         <graphic>
+            <ImageView fitHeight="130.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/voice-note2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

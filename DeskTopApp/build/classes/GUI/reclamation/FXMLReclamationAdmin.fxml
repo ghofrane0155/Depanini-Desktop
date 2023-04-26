@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1150.0" stylesheets="@../style/AdminReclamation.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.reclamation.FXMLReclamationAdminController">
+   <children>
+      <StackPane layoutX="195.0" layoutY="-1.0" prefHeight="710.0" prefWidth="950.0" style="-fx-background-color: ffffff;" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Pane fx:id="pnlCustomer" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnlOrders" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="pnlMenus" prefHeight="710.0" prefWidth="200.0" />
+            <Pane fx:id="pnlOverview" prefHeight="620.0" prefWidth="950.0">
+               <children>
+                  <TextField fx:id="search" layoutX="676.0" layoutY="224.0" prefHeight="35.0" prefWidth="203.0" promptText="search" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-border-color: white; -fx-border-radius: 2em; -fx-border-color: #30385D;">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="image_re" fitHeight="42.0" fitWidth="30.0" layoutX="461.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/arrow.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="497.0" layoutY="236.0" text="Metre a jour la table ">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="823.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Search_52px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="62.0" fitWidth="163.0" layoutX="826.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.final.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="523.0" fitWidth="635.0" layoutX="-77.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/To%20do%20list-rafiki.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="table_reclamation" layoutX="115.0" layoutY="285.0" prefHeight="406.0" prefWidth="776.0">
+                    <columns>
+                      <TableColumn fx:id="nom_user_col" prefWidth="169.0" text="Nom de Utilisateur" />
+                      <TableColumn fx:id="titre_reclamatio_col" prefWidth="230.0" text="Titre de la reclamation " />
+                        <TableColumn fx:id="etat_reclamation_col" prefWidth="137.0" text="Etat reclamation" />
+                        <TableColumn fx:id="marck_col" prefWidth="142.0" text="Date de creation" />
+                        <TableColumn fx:id="action_col" prefWidth="94.0" text="Action" />
+                    </columns>
+                  </TableView>
+                  <Text fill="#ff5151" layoutX="416.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Reclamation" underline="true" wrappingWidth="202.99999141693115">
+                     <font>
+                        <Font name="System Bold" size="32.0" />
+                     </font>
+                  </Text>
+                  
+                     </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <VBox alignment="TOP_CENTER" prefHeight="710.0" prefWidth="230.0" style="-fx-background-color: #30385D;">
+         <children>
+            <ImageView fx:id="tfimg" fitHeight="89.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user1.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="tfnom1" alignment="CENTER" prefHeight="30.0" prefWidth="140.0" text="Ghofrane Rahmouni" textFill="#e7e5e5">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCustomers1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#users_clicked" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/styles.css" text="Customers">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnOrders1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#feedback" prefHeight="63.0" prefWidth="249.0" stylesheets="@../css/styles.css" text="Feedback">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-approval.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnMenus1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#EventPage" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/styles.css" text="Event">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-event-accepted-32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnPackages1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#Reclamation_view" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/styles.css" text="Reclamation">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-exclamation-mark-32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnSignout1" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#signOut_clicked" prefHeight="42.0" prefWidth="259.0" stylesheets="@../css/styles.css" text="Sign Out">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="20.0" left="50.0" top="20.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

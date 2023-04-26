@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.client.UIDemandeController">
+   <children>
+      <BorderPane prefHeight="710.0" prefWidth="1150.0">
+         <top>
+            <HBox prefHeight="122.0" prefWidth="1150.0" style="-fx-background-color: #151e3d;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="audience" fitHeight="114.0" fitWidth="206.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.final.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fill="#d6d9e4" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENUE DANS L'ESPACE CLIENT" wrappingWidth="202.236328125">
+                     <font>
+                        <Font name="Segoe UI Black" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="350.0" top="20.0" />
+                     </HBox.margin>
+                  </Text>
+               </children></HBox>
+         </top>
+         <left>
+            <VBox prefHeight="648.0" prefWidth="235.0" style="-fx-background-color: #30385d;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliquez ici pour un petit demo vocal :" wrappingWidth="195.810546875">
+                     <VBox.margin>
+                        <Insets left="20.0" top="140.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="sound" accessibleRole="BUTTON" fitHeight="124.0" fitWidth="130.0" onMouseClicked="#soundon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/sound.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Button fx:id="retour" graphicTextGap="20.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="247.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Retour" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/arrow2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <BorderPane prefHeight="544.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+               <center>
+                  <TabPane prefHeight="543.0" prefWidth="768.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                      <Tab text="       Statistiques des demandes         ">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Pane layoutX="328.0" layoutY="65.0" prefHeight="79.0" prefWidth="259.0" style="-fx-background-color: #30385d;">
+                                       <children>
+                                          <Text fill="WHITE" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Total des demandes enregistrées :" wrappingWidth="167.291015625">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Label fx:id="calcul" layoutX="176.0" layoutY="5.0" textFill="#ff6051">
+                                             <font>
+                                                <Font name="System Bold" size="48.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <BarChart fx:id="barChart" layoutX="52.0" layoutY="168.0" prefHeight="320.0" prefWidth="767.0" title="Nombre Total des demandes enregistrées / JOUR">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </BarChart>
+                                    <ImageView fitHeight="108.0" fitWidth="117.0" layoutX="164.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/analysis.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="      Personnalisez vos demandes     ">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <Text layoutX="28.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplir soigneusement ce formulaire pour envoyer une demande" wrappingWidth="355.13671875" />
+                                    <TextField fx:id="id" layoutX="190.0" layoutY="66.0" onKeyTyped="#ControleNumbers" promptText="ID Client" />
+                                    <TextField fx:id="budget" layoutX="383.0" layoutY="66.0" onKeyTyped="#ControleBudget" promptText="Budget" />
+                                    <DatePicker fx:id="date" layoutX="584.0" layoutY="66.0" prefHeight="25.0" prefWidth="156.0" promptText="date creation" />
+                                    <TextField fx:id="descripton" layoutX="28.0" layoutY="136.0" onKeyTyped="#ControleString" prefHeight="107.0" prefWidth="232.0" promptText="Description" />
+                                    <ImageView fx:id="add" accessibleRole="BUTTON" fitHeight="59.0" fitWidth="57.0" layoutX="259.0" layoutY="275.0" onMouseClicked="#ajouterD" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/add.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="label1" layoutX="214.0" layoutY="102.0" prefHeight="17.0" prefWidth="139.0" textFill="#bf1515" />
+                                    <Label fx:id="label2" layoutX="407.0" layoutY="102.0" prefHeight="17.0" prefWidth="139.0" textFill="#bf1515" />
+                                    <Label fx:id="label3" layoutX="593.0" layoutY="102.0" prefHeight="17.0" prefWidth="139.0" textFill="#bf1515" />
+                                    <Label fx:id="label4" layoutX="42.0" layoutY="148.0" prefHeight="17.0" prefWidth="139.0" textFill="#bf1515" />
+                                    <Label fx:id="Controle" layoutX="48.0" layoutY="251.0" prefHeight="17.0" prefWidth="193.0" textFill="#bf1515" />
+                                    <TextField fx:id="nom" layoutX="28.0" layoutY="66.0" onKeyTyped="#ControleString" prefHeight="22.0" prefWidth="151.0" promptText="Nom et Prenom" />
+                                    <Label fx:id="label5" layoutX="34.0" layoutY="102.0" prefHeight="17.0" prefWidth="139.0" textFill="#bf1515" />
+                                    <TableView fx:id="Table" layoutX="332.0" layoutY="275.0" prefHeight="228.0" prefWidth="562.0">
+                                       <columns>
+                                          <TableColumn fx:id="nomcol" prefWidth="163.0" text="Nom et Prenom" />
+                                          <TableColumn fx:id="budgetcol" prefWidth="100.0" text="Budget" />
+                                          <TableColumn fx:id="datecol" prefWidth="116.0" text="Date" />
+                                          <TableColumn fx:id="descriptioncol" prefWidth="181.0" text="Description" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="330.0" layoutY="213.0" text="Toutes les demandes" textFill="#30385d">
+                                       <font>
+                                          <Font name="System Bold" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="filter" layoutX="640.0" layoutY="154.0" promptText="Rechercher" />
+                                    <ImageView fx:id="buttonsearch" fitHeight="40.0" fitWidth="40.0" layoutX="839.0" layoutY="149.0" onMouseClicked="#recherche" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="trash" accessibleRole="BUTTON" fitHeight="54.0" fitWidth="50.0" layoutX="263.0" layoutY="446.0" onMouseClicked="#supprimer" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="buttonmodifier" accessibleRole="BUTTON" fitHeight="47.0" fitWidth="51.0" layoutX="264.0" layoutY="361.0" onMouseClicked="#modifier" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/modifie.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text fx:id="text" fill="#bf1515" layoutX="546.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="211.13671875" />
+                                    <ImageView fitHeight="260.0" fitWidth="242.0" layoutX="12.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/demand.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="    Les offres disponibles    ">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <TableView fx:id="table" layoutX="273.0" layoutY="122.0" prefHeight="391.0" prefWidth="604.0">
+                                       <columns>
+                                          <TableColumn fx:id="nom_offre" minWidth="0.0" prefWidth="105.0" text="Nom" />
+                                          <TableColumn fx:id="prix_offre" prefWidth="94.0" text="Prix" />
+                                          <TableColumn fx:id="description_offre" prefWidth="179.0" text="Description" />
+                                          <TableColumn fx:id="id_categorie" prefWidth="102.0" text="categorie" />
+                                          <TableColumn fx:id="type_offre" prefWidth="123.0" text="Type offre" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="signer" layoutX="721.0" layoutY="28.0" mnemonicParsing="false" onAction="#signer" prefHeight="65.0" prefWidth="148.0" style="-fx-background-color: ffffff;" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Signer Contrat" textFill="#30385d">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Button>
+                                    <Text fill="#f4d530" layoutX="48.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisir l'offre adequat et signer un contrat avec le freelancer maintenant !" wrappingWidth="369.73828125">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="380.0" fitWidth="369.0" layoutX="-71.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/Signing%20a%20contract-bro.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="      Liste des contrats      ">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <TableView fx:id="tableC" layoutX="8.0" layoutY="146.0" prefHeight="251.0" prefWidth="542.0">
+                                      <columns>
+                                          <TableColumn fx:id="id_offre" prefWidth="42.0" text="ID" />
+                                        <TableColumn fx:id="cin" prefWidth="99.0" text="CIN" />
+                                        <TableColumn fx:id="dateC" prefWidth="102.0" text="Date" />
+                                          <TableColumn fx:id="cible" prefWidth="124.0" text="L'offre cible" />
+                                          <TableColumn fx:id="descriptionC" prefWidth="173.0" text="Description" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="rechercher" layoutX="615.0" layoutY="100.0" promptText="Rechercher" />
+                                    <ImageView fx:id="buttonsearch1" fitHeight="40.0" fitWidth="40.0" layoutX="810.0" layoutY="96.0" onMouseClicked="#rechercherC" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="buttonmodifier1" accessibleRole="BUTTON" fitHeight="42.0" fitWidth="42.0" layoutX="573.0" layoutY="144.0" onMouseClicked="#modifierC" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/modifie.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ComboBox fx:id="ExporterListe" layoutX="204.0" layoutY="423.0" onAction="#ExporterListe" prefHeight="31.0" prefWidth="152.0" promptText="PDF/Imprimer" styleClass="nav_btn" stylesheets="@../css/styling.css" />
+                                    <ImageView fx:id="imageview9" fitHeight="295.0" fitWidth="345.0" layoutX="594.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/printer.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="62.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" derniere etape -&gt;  imprimez vos contrats " wrappingWidth="436.4013671875">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="64.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tout est fini ?">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fx:id="trash1" accessibleRole="BUTTON" fitHeight="46.0" fitWidth="44.0" layoutX="572.0" layoutY="205.0" onMouseClicked="#supprimerC" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/trash.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

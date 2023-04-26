@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.User.NotificationController">
+   <left>
+      <VBox style="-fx-background-color: #30385D;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="67.0" fitWidth="134.0" onMouseClicked="#depanini_clicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <VBox prefHeight="148.0" prefWidth="225.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <ImageView fx:id="tfimg" fitHeight="118.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="60.0" right="60.0" top="15.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../images/icons8-customer-100.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="tfnom_prenom" alignment="CENTER" maxWidth="200.0" text="Nom et Prenom" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets left="30.0" right="30.0" />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="262.0" prefWidth="225.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../css/styles.css">
+                     <children>
+                        <JFXButton graphicTextGap="10.0" onAction="#prifile_clicked" prefHeight="42.0" prefWidth="261.0" text="Profile       " textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" stylesheets="@../css/styles.css">
+                     <children>
+                        <JFXButton graphicTextGap="10.0" onAction="#notif_clicked" prefHeight="42.0" prefWidth="261.0" stylesheets="@../css/styles.css" text="Notifications" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/notif.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <styleClass>
+                        <String fx:value="selected" />
+                        <String fx:value="selected-border" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../css/styles.css">
+                     <children>
+                        <JFXButton graphicTextGap="10.0" onAction="#password_clicked" prefHeight="42.0" prefWidth="244.0" text="Password" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/key.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="selected" stylesheets="@../css/styles.css">
+                     <children>
+                        <JFXButton graphicTextGap="10.0" onAction="#settings_clicked" prefHeight="42.0" prefWidth="267.0" text="Settings  " textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/setting.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="564.0" prefWidth="655.0" spacing="30.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="36.0" prefWidth="247.0" text="Paramètres du profil" textFill="#30385d">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <graphic>
+                  <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="591.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="262.0" text="Paramètres du profil" textFill="#30385d">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="49.0" prefWidth="224.0" />
+                        <Label onMouseClicked="#decon_clicked" prefHeight="46.0" prefWidth="99.0" text="Déconnexion" underline="true">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </HBox>
+               </graphic>
+            </Label>
+            <VBox prefHeight="244.0" prefWidth="555.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="12.0" prefWidth="555.0" text="Notifications" textFill="#ff6051" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,123 @@
+.side_ankerpane{
+    -fx-background-color: #30385D;
+    /*-fx-border-width: 2px 2px 2px 2px;*/
+/*    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;*/
+    
+}
+.inner_pane{
+    -fx-background-color: #FFFFFF;
+    /*-fx-border-width: 2px 2px 2px 2px;*/
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    /*-fx-border-style: solid;*/
+}
+/*#btn_creer, #btn_aff2,#btnajout1{
+    -fx-background-color: #000000;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFFfff;
+}
+
+#btn_modif ,#btn_supp , #btn_aff, #btnajout ,#btn_creer2{
+    -fx-background-color: #30385D;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #30385D;
+}*/
+
+/*.id_event{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-border-width: 8 0 1 0;
+    -fx-border-color: #242551;
+}*/
+
+.selected-border {
+-fx-border-color: #ffffff;
+-fx-border-width: 0 3 0 0;
+}
+.selected:hover {
+-fx-background-color: #3C3D58;
+}
+.form_container TextField {
+-fx-pref-height: 250;
+-fx-pref-height: 35;
+-fx-background-color: #FFFFFF;
+-fx-font-size: 1.3em;
+-fx-effect: dropshadow (three-pass-box, #AAAAAA, 3, 0, 0,3);
+}
+.nav_btn {
+     -fx-background-color: transparent;
+     -fx-cursor: hand;
+     
+}
+.nav_btn:hover{
+     -fx-background-color: #456CE3;
+}
+
+.bg-white{
+     -fx-background-color: #ffffff;
+     -fx-effect :dropshadow(three-pass-box , rgba(0,0,0,.3), 10,0,0,0);
+      -fx-background-radius: 8px;
+}
+
+.bg-white:hover{
+    -fx-effect :dropshadow(three-pass-box , rgba(0,0,1,.6), 10,0,0,0);
+}
+/**************************partie des statistique****************************/
+.card1{
+    -fx-background-color:linear-gradient(to right,FF6051,#30385D);
+    -fx-background-radius:0px 10px 10px 0px;
+}
+
+.card1_left{
+    -fx-background-color:#2b428c;
+}
+
+.card:hover{
+    -fx-effect:dropshadow (three-pass-box, rgba(0,0,0,.5), 5,0,0,0);
+}
+
+.card2{
+    -fx-background-color:linear-gradient(to right,#FF6051,#F4D530);
+    -fx-background-radius:0px 10px 10px 0px;
+}
+
+.card2_left{
+    -fx-background-color:#F4BF30;
+}
+
+.card2:hover{
+    -fx-effect:dropshadow (three-pass-box, rgba(0,0,0,.5), 5,0,0,0);
+}
+
+.card3{
+    -fx-background-color:linear-gradient(to right,#FF6051,#456CE3);
+    -fx-background-radius:0px 10px 10px 0px;
+}
+
+.card3_left{
+    -fx-background-color:#456CE3;
+}
+
+
+/*****************************************************************/
+
+
+.eventImage{
+    -fx-border-color:#FF6051;
+    -fx-border-radius:10px 0px 0px 0px;
+   
+    
+}
+
+
+.spinner {
+    -fx-background-color:#ffffff;
+    -fx-border-color:#F4D530;
+    -fx-boerder-width:08px;
+}

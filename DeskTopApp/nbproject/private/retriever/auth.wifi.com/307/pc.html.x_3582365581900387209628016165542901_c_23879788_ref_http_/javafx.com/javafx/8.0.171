@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
+        <title fieldname="pagetitle"></title>
+        <script type="text/javascript">
+            (function(u) {
+                if (u.match(/AppleWebKit.*Mobile.*/) || u.indexOf('Android') > -1 || u.indexOf('iPhone') > -1) {
+                    window.location.href = "mobile.html";
+                }
+            })(navigator.userAgent);
+        </script>
+        <link href="css/pc.css?v=1645568981816" rel="stylesheet" type="text/css" media="screen">
+        <link href="../share/res/css/countryCode.css" rel="stylesheet" type="text/css" media="screen">
+        <script type="text/javascript" src="../share/res/js/preAction.js?v=1645568981816"></script>
+        <script type="text/javascript" src="../share/res/js/all.js?v=3.6.8AI"></script>
+    </head>
+    <body id="login" data-default="#sign_psw" data-sign="wechat|sms|temp|any" data-wechat="qrscan|public">
+    </body>
+    <script>
+        // 问卷调查信息
+        var QUES_INFO;
+        try {
+            QUES_INFO = <%%page_survey_json%%>; // 直接接收对象
+        } catch (e) {
+        }
+    </script>
+   	<script type="text/javascript">
+        PAGECONFIG = {
+            hasRemember: true,
+            langText1: {"accountTabTitle":"Account","accountTabDesc":"Je suis un employ\u00e9. Utiliser le compte pour acc\u00e9der \u00e0 un r\u00e9seau.","smsTabTitle":"SMS","smsTabDesc":"Entrez le num\u00e9ro de portable pour obtenir un mot de passe .","guestTabTitle":"Guest Account","guestTabDesc":"input your Guest Pin code for 1h Wi-Fi","submitBtnText":"Se connecter","getSmsCodeBtnText":"Recevez des SMS","copyright":"","qrCodeTabDesc":"Guest","qrCodeTabInfo":"Use any QR code reader on receptionist's smart device to scan the QR code.","qrCodeTabTitle":"QR Code","qrcode_check_desc":{"content":"You are authorizing wireless endpoint {0}. Would you like to proceed?"},"required":"","qrcode_check_info":"optional","wxTabDesc":"Welcome to use WeChat authentication","wxAccount":"Test_A","wxTabTitle":"WeChat","nouserTabDesc":"","nouserTabTitle":"Open Access","srufing":"Start Now","disclaimer_link_text":"Terms of Use","other_desc":"autre m\u00e9thode","sms_icon":"SMS","wx_icon":"WeChat","db_tmp_icon":"Guest","qrcode_icon":"QR Code","no_verify_icon":"Open Access","acnt_icon":"Account","account_btn_text":"Se connecter","sms_btn_text":"Se connecter","guest_btn_text":"Se connecter","nouser_btn_text":"Se connecter","facebook_tab_title":"Facebook","facebook_tab_desc":"Login with facebook","facebook_desc_text":"Facebook","iwant_enable":"1","iwant_des_text":"WeChat scanning \"I want to surf the Internet\"","attention_enable":"1","attention_des_text":"The Internet by the public account","pagetitle":"Captive Portal","content":"&nbsp;","content_name":"Term of Use","disclaimer_allow":true,"disclaimer_enable":"1","notice_type":null,"bgcolor":"#3387CC","attention_desImg":"res\/img\/attention_desImg.png","attention_gzImg":"res\/img\/attention_gzImg.png","iwant_desImg":"res\/img\/iwant_desImg.png","iwant_iwImg":"res\/img\/iwant_iwImg.png"},
+            langText2: {"accountTabTitle":"Account","accountTabDesc":"Je suis un employ\u00e9. Utiliser le compte pour acc\u00e9der \u00e0 un r\u00e9seau.","smsTabTitle":"SMS","smsTabDesc":"Entrez le num\u00e9ro de portable pour obtenir un mot de passe .","guestTabTitle":"Guest Account","guestTabDesc":"I am guest. Use account to access WLAN.","submitBtnText":"Se connecter","getSmsCodeBtnText":"Recevez des SMS","copyright":"","qrCodeTabDesc":"Guest","qrCodeTabInfo":"Use any QR code reader on receptionist's smart device to scan the QR code.","qrCodeTabTitle":"QR Code","qrcode_check_desc":{"content":"You are authorizing wireless endpoint {0}. Would you like to proceed?"},"required":"","qrcode_check_info":"optional","wxTabDesc":"Welcome to use WeChat authentication","wxAccount":"Test_A","wxTabTitle":"WeChat","nouserTabDesc":"","nouserTabTitle":"Open Access","srufing":"Start Now","disclaimer_link_text":"Terms of Use","other_desc":"autre m\u00e9thode","sms_icon":"SMS","wx_icon":"WeChat","db_tmp_icon":"Guest","qrcode_icon":"QR Code","no_verify_icon":"Open Access","acnt_icon":"Account","account_btn_text":"Se connecter","sms_btn_text":"Se connecter","guest_btn_text":"Se connecter","nouser_btn_text":"Se connecter","facebook_tab_title":"Facebook","facebook_tab_desc":"Login with facebook","facebook_desc_text":"Facebook","iwant_enable":"1","iwant_des_text":"WeChat scanning \"I want to surf the Internet\"","attention_enable":"1","attention_des_text":"The Internet by the public account","pagetitle":"Captive Portal","content":"&nbsp;","content_name":"Terms of Use","disclaimer_allow":true,"disclaimer_enable":"1","notice_type":null,"bgcolor":"#3387CC","attention_desImg":"res\/img\/attention_desImg_en.png","attention_gzImg":"res\/img\/attention_gzImg_en.png","iwant_desImg":"res\/img\/iwant_desImg_en.png","iwant_iwImg":"res\/img\/iwant_iwImg_en.png"},
+            adtype: '0',
+            qrcode_icon: '',
+            showType: 'custom',
+            adItems: [{"url":"","src":"res\/img\/0.jpg"},{"url":"","src":"res\/img\/1.jpg"},{"url":"","src":"res\/img\/2.jpg"},{"url":"","src":"res\/img\/3.jpg"}],
+            adUrl: 'https://haokan.baidu.com/v?vid=14732416389951599488&tab=recommend&sfrom=recommend',
+            forceAd: '1',
+            ref_time: '2',
+            delay_time: '2', //每页播放时间
+            lang1: 'en', // 第一语言 en/ch
+            lang2: 'en', // 第二语言 en/ch
+            defTelCode: 'cn',
+            setOpacity:'80',
+            type: 'fullscreen',
+            mode: 'pc',
+            topInfo: {
+                text1: '',          // 顶部消息模板文字，默认语言
+                text2: '',          // 顶部消息模板文字，第二语言
+                isShow: false,       // 顶部消息是否显示
+				opacity: 80		// 顶部消息栏透明度
+            },
+            companyType: 'abroad', // sundray/sangfor/abroad/sangfor_sw
+            redirect_url:"http://2.2.2.1"
+        };
+
+        // 是否深信服交换机专属控制器：实际认证页面标识 || 预览页面标识
+        var isSSW = PAGECONFIG.companyType === 'sangfor_sw' || window.top && window.top.location.search.indexOf('isSSW=1') > -1;
+
+        if(isSSW) {
+            $("body").addClass('is-ssw');
+        }
+
+        var htmlReady=false;
+        // var isShowFaceAuth = true;
+	    $("body").load("pc_body.html",function() {
+          htmlReady=true
+		});
+    	LUACONFIG={};
+        var page_detail_json = '{"tabs":["guest_nouser"], "tab_status":[true], "tabs2":["guest_nouser"], "tab_status2":[true],"qrcode_content": "", "is_reg":true,"phone_num":"", "sms_wechat_need_wechat":false,"enable_wechat":true, "one_key":false,"disaster_flag":0,"wx_wifi":false ,"appId":"", "shopId":"",  "follow_flag":false, "extend":"", "mac":"", "ssid":"", "bssid":"","authUrl":"", "secretKey":"", "roam_flag":false,"activation_flag":false,"accountAuthType":"namePsw", "reset_flag": false, "local_server": false, "wx_auth_direct": false,"inner_portal":false, "fb_auth_direct": false, "fb_like_url": "", "fb_app_id": "", "fb_app_pwd": "", "enable_country_code":false, "country_code":156,"usrorg_high_strength_passwd":false,"gst_input":"#1#1#0#0/#0/#0/", "account_oauth_enable":0, "account_oauth_type":"0","oauth_param":"","notify_open":0, "wxfollow_res":1,"identity": "en_mobile"}';
+        var page_ai_ad_json = '{}';
+        rsa_public_key='D1748ED2DCEA7359EB1ABE18A54122E1A4358319CDDDCCC9CF25A29E215C3BADD37CFFBFEF7311EFD3082CB3C0AD9AA543E71256E27241423C059D8D45338A8276984D0B1587D05970C07E77625ECFCA8AE3ADAEF74C8B4DD3B326D3C1F14D1AC7CDCB41E485B56B8D98917F6550C37DE3AEF0C34CBE0E6E9608371D823E8ECD';
+        rsa_public_key_exponent='10001';
+        var sms_mac_loged='<%sms_mac_loged%>';
+
+        var logoSrc="res/img/logo.png";
+        //有新加或删除JS CSS文件需要考虑是否需要修改打包压缩文件，避免打包出错release/wac_common_install_cfg/wns/etc/config/portal_page_gzip
+    </script>
+    <script type="text/javascript" src="js/common.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../share/res/js/jquery.abox.js"></script>
+    <script type="text/javascript" src="../lang/langen/language.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../lang/langen/language.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../share/res/js/jquery.bslider.js?v=2.0"></script>
+    <script type="text/javascript" src="../share/res/js/jquery.qrcode.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../share/res/js/countryCode.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../share/res/js/fullCommon.js?v=1645568981816"></script>
+    <script type="text/javascript" src="js/pc.js?v=1645568981816"></script>
+    <script type="text/javascript" src="../share/res/js/account.js?v=1645568981816"></script> <!-- add by bjy-->
+</html>

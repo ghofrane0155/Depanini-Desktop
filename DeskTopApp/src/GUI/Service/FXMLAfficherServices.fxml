@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1150.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Service.FXMLAfficherServicesController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="5.0" prefHeight="710.0" prefWidth="1150.0">
+         <children>
+            <TableView fx:id="table" layoutX="615.0" layoutY="113.0" prefHeight="322.0" prefWidth="483.0">
+               <columns>
+                  <TableColumn fx:id="id_service" prefWidth="119.0" text="ID service " />
+                  <TableColumn fx:id="nom_service" minWidth="6.0" prefWidth="122.0" text="Nom" />
+                  <TableColumn fx:id="prix_service" minWidth="6.0" prefWidth="122.0" text="prix" />
+                  <TableColumn fx:id="descrption_service" minWidth="6.0" prefWidth="122.0" text="Description" />
+               </columns>
+            </TableView>
+            <Button fx:id="afficher_service" layoutX="687.0" layoutY="466.0" mnemonicParsing="false" onAction="#Afficher" prefHeight="57.0" prefWidth="200.0" style="-fx-background-color: #FF6051; -fx-background-radius: 100030;" text="Afficher" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="21.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/afficher.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="supp" layoutX="917.0" layoutY="459.0" mnemonicParsing="false" onAction="#supp" prefHeight="66.0" prefWidth="200.0" style="-fx-background-color: #FF6051; -fx-background-radius: 100030;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="21.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="52.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/supprimer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane layoutX="-1.0" layoutY="-8.0" prefHeight="632.0" prefWidth="280.0" style="-fx-background-color: #30385D;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="-5.0" layoutY="561.0" prefHeight="160.0" prefWidth="1150.0" style="-fx-background-color: #30385D;">
+               <children>
+                  <ImageView fx:id="return_home" fitHeight="52.0" fitWidth="63.0" layoutX="50.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/offre.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="50.0" layoutY="118.0" prefHeight="26.0" prefWidth="62.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Retour" textFill="#ff5050">
+                     <font>
+                        <Font name="System Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Text fill="#ff6051" layoutX="314.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les services postulés" underline="true">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="632.0" fitWidth="644.0" layoutX="50.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Customer%20feedback-rafiki.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.commande.CommandeController">
+   <children>
+      <BorderPane layoutX="114.0" layoutY="114.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="553.0" prefWidth="284.0" style="-fx-background-color: #30385d;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="250.0">
+                     <children>
+                        <Label fx:id="exit" onDragDetected="#exit" prefHeight="17.0" prefWidth="16.0" text="x" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets bottom="25.0" right="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           
+                        </Label>
+                        <Label text="Nos Produits:" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Gadugi Bold" size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="40.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" cache="true" prefHeight="40.0" prefWidth="230.0" style="-fx-background-radius: 20px;">
+                     <children>
+                        <TextField fx:id="chercherField" alignment="CENTER" onAction="#chercher_produit" prefHeight="25.0" prefWidth="209.0" promptText="Chercher les produits." style="-fx-background-radius: 20px; -fx-background-color: #808080;">
+                           <opaqueInsets>
+                              <Insets left="10.0" right="10.0" />
+                           </opaqueInsets>
+                         
+                           <effect>
+                              <DropShadow offsetY="4.0">
+                                 <color>
+                                    <Color opacity="0.6598984599113464" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                     <effect>
+                        <DropShadow height="40.96" offsetY="4.0" radius="16.45" spread="0.2" width="26.84">
+                           <color>
+                              <Color red="0.4736842215061188" green="0.4649122953414917" blue="0.4649122953414917" opacity="0.75" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </HBox>
+                  <Pane prefHeight="20.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+                  <VBox fx:id="produitchoisit" alignment="CENTER" prefHeight="377.0" prefWidth="230.0" style="-fx-background-color: #456CE8; -fx-background-radius: 10PX;">
+                     <VBox.margin>
+                        <Insets bottom="25.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="210.0">
+                           <children>
+                              <Label fx:id="nomproduit" prefHeight="100.0" prefWidth="159.0" text="Nom de produit" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="8.0" right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="idproduit" disable="true" prefHeight="17.0" prefWidth="0.0" text="idproduit" visible="false" />
+                              <VBox alignment="CENTER" prefHeight="45.0" prefWidth="75.0">
+                                 <children>
+                                    <Pane prefHeight="9.0" prefWidth="75.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Pane>
+                                    <Label fx:id="prixproduit" alignment="CENTER" prefHeight="27.0" prefWidth="67.0" text="0.0 " textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="Gadugi Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="1.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="12.0" prefWidth="28.0" text="DTN">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <ImageView fx:id="taswirtii" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/online-shopping.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="descriptionproduit" alignment="CENTER" contentDisplay="CENTER" prefHeight="107.0" prefWidth="187.0" text="Description:" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="230.0">
+                           <children>
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="48.0" prefWidth="230.0">
+                           <children>
+                              <Button fx:id="btn_ajouter_au_panier" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Ajouter_au_panier" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: #808080; -fx-background-radius: 15px;" text="Ajouter au panier" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow blurType="TWO_PASS_BOX" offsetY="4.0">
+                                       <color>
+                                          <Color red="0.9300000071525574" green="0.9300000071525574" blue="0.9300000071525574" opacity="0.7487309575080872" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                                 
+                                 <HBox.margin>
+                                    <Insets bottom="8.0" />
+                                 </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow offsetY="5.0">
+                           <color>
+                              <Color opacity="0.4670051038265228" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="59.0" prefWidth="660.0" style="-fx-background-color: #808080; -fx-background-radius: 20px;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="164.0" text="Username">
+                           <font>
+                              <Font name="Candara Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="30.0" right="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Pane prefHeight="59.0" prefWidth="394.0">
+                           <children>
+                              <Label fx:id="path" layoutX="43.0" layoutY="21.0" prefHeight="8.0" prefWidth="152.0" text="Label" />
+                           </children></Pane>
+                        <ImageView fx:id="btn_panier" fitHeight="45.0" fitWidth="54.0" onMouseClicked="#visiter_panier_image" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/shopping-basket.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                          
+                        </ImageView>
+                     </children>
+                     <effect>
+                        <DropShadow offsetY="3.0" />
+                     </effect>
+                  </HBox>
+                  <Pane prefHeight="21.0" prefWidth="700.0">
+                     <children>
+                        <Separator layoutX="50.0" layoutY="5.0" prefHeight="21.0" prefWidth="604.0">
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                        </Separator>
+                     </children>
+                  </Pane>
+                  <HBox prefHeight="100.0" prefWidth="660.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="85.0" prefWidth="255.0" style="-fx-background-color: #456CE8; -fx-background-radius: 20px;">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label opacity="0.8" prefHeight="53.0" prefWidth="121.0" text="Des produits exclusives. " wrapText="true">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="101.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/1200px-Black_star.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="50.0" top="10.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5329949855804443" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </HBox>
+                        <Pane prefHeight="105.0" prefWidth="60.0" />
+                        <HBox prefHeight="85.0" prefWidth="255.0" style="-fx-background-color: #FF6150; -fx-background-radius: 20PX;">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="85.0" prefWidth="169.0">
+                                 <children>
+                                    <Label opacity="0.8" prefHeight="68.0" prefWidth="139.0" text="-50% sur le 2émé produit." wrapText="true">
+                                       <font>
+                                          <Font name="Times New Roman Bold" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fitHeight="85.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/discount.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5989847183227539" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </HBox>
+                        <Pane prefHeight="105.0" prefWidth="50.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="produitTable" onMouseClicked="#produit_clicked" prefHeight="343.0" prefWidth="650.0">
+                           <columns>
+                              <TableColumn fx:id="tnom" prefWidth="135.11108911037445" text="Nom" />
+                              <TableColumn fx:id="tcategorie" prefWidth="113.99996948242188" text="Categorie" />
+                              <TableColumn fx:id="tprix" minWidth="0.0" prefWidth="105.3333740234375" text="Prix" />
+                              <TableColumn fx:id="tdescription" minWidth="0.0" prefWidth="74.6666259765625" text="Description" />
+                              <TableColumn fx:id="tid" prefWidth="122.0" text="id" />
+                              <TableColumn fx:id="timage" prefWidth="114.00002034505212" text="image" />
+                           </columns>
+                           <HBox.margin>
+                              <Insets bottom="15.0" />
+                           </HBox.margin>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

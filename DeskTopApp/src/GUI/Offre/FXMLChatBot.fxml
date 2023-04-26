@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="710.0" prefWidth="1150.0" style="-fx-background-color: #30385D;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Offre.FXMLChatBotController">
+   <Label layoutX="253.0" layoutY="36.0" prefHeight="87.0" prefWidth="610.0" text="Depanini ChatBot est là pour vous guider !!" textFill="WHITE" underline="true">
+      <font>
+         <Font name="System Bold Italic" size="28.0" />
+      </font></Label>
+   <TextField fx:id="inputTextField" layoutX="629.0" layoutY="169.0" onAction="#processInput" prefHeight="93.0" prefWidth="376.0" promptText="QUESTION">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </TextField>
+   <Button fx:id="btnEnvoyer" layoutX="1021.0" layoutY="172.0" onAction="#processInput" prefHeight="69.0" prefWidth="88.0" styleClass="nav_btn" stylesheets="@../css/styling.css" textFill="#ff6051">
+      <font>
+         <Font name="System Bold Italic" size="15.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="77.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/send-mail.png" />
+            </image>
+         </ImageView>
+      </graphic></Button>
+   <TextArea fx:id="outputLabel" layoutX="629.0" layoutY="279.0" prefHeight="200.0" prefWidth="468.0" promptText="REPONSE" />
+   <ImageView fitHeight="660.0" fitWidth="649.0" layoutX="39.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/—Pngtree—chat%20bot%20messenger%20illustration%20concept_4180694.png" />
+      </image>
+   </ImageView>
+   <Button fx:id="btnRetour" graphicTextGap="10.0" layoutX="70.0" layoutY="600.0" onAction="#Retour" prefHeight="57.0" prefWidth="161.0" styleClass="nav_btn" stylesheets="@../css/styling.css" text="Retour" textFill="#ff6051">
+      <font>
+         <Font name="System Bold Italic" size="19.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="47.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/arrow2.png" />
+            </image>
+         </ImageView>
+      </graphic></Button>
+</AnchorPane>
