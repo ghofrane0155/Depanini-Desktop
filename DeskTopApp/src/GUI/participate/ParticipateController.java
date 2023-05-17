@@ -264,12 +264,12 @@ public class ParticipateController implements Initializable {
 //        }
             ////////////////////////////////////////////
 
-            String outputQR = "C:\\Users\\noure\\OneDrive\\Bureau\\desktopapp2\\src\\GUI\\images\\qr.png";
-            String text = "Login :" + SessionUser.getNom_user()+" "+SessionUser.getPrenom_user() + "\n" + "Nom de l'événement :" + eventName + "\n" + "Quantité de ticket acheté :" + Integer.toString(spinner1.getValue()) + "\n" + "Prix Total" + prix_tot.getText();
-
-
-            
-            qrcode.generateQRcode(text, 1250, 1250, outputQR);
+//            String outputQR = "C:\\Users\\noure\\OneDrive\\Bureau\\desktopapp2\\src\\GUI\\images\\qr.png";
+//            String text = "Login :" + SessionUser.getNom_user()+" "+SessionUser.getPrenom_user() + "\n" + "Nom de l'événement :" + eventName + "\n" + "Quantité de ticket acheté :" + Integer.toString(spinner1.getValue()) + "\n" + "Prix Total" + prix_tot.getText();
+//
+//
+//            
+//            qrcode.generateQRcode(text, 1250, 1250, outputQR);
 
 //            userResult.close();
 //            userStatement.close();

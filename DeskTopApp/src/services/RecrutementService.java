@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package services;
-import Entity.Demandes;
-import Entity.Offres;
+import Entity.Recrutements;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,37 +17,37 @@ import Utils.MyDB;
  *
  * @author yasmine
  */
-public class DemandesService implements ICRUD<Demandes> {
+public class RecrutementService implements ICRUD<Recrutements> {
     
     Connection connexion;
     Statement stm;
 
-    public DemandesService() {
+    public RecrutementService() {
         connexion = MyDB.getInstance().getConx();
     }
 
     @Override
-    public void ajouter(Demandes d) throws SQLException {            
-        String req = "INSERT INTO `demandes` (`idClient`, `budget` , `description` ,`date` ,`nom`) VALUES ( '"
-                + d.getID() + "', '" + d.getBudget() + "', '" + d.getDescription() + "','" + d.getDate() + "','" + d.getNom()+ "') ";
+    public void ajouter(Recrutements d) throws SQLException {            
+        String req = "INSERT INTO `recrutements` (`idClient`, `salaire` , `description` ,`date` ,`nom`) VALUES ( '"
+                + d.getID() + "', '" + d.getSalaire() + "', '" + d.getDescription() + "','" + d.getDate() + "','" + d.getNom()+ "') ";
         stm = connexion.createStatement();
         stm.executeUpdate(req);
         System.out.println("Demande ajoutee !");
     }
 
     @Override
-    public List<Demandes> afficher() throws SQLException {
-        List<Demandes> demandes = new ArrayList<>();
-        String req = "select * from demandes";
+    public List<Recrutements> afficher() throws SQLException {
+        List<Recrutements> demandes = new ArrayList<>();
+        String req = "select * from recrutements";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);
 
         while (rst.next()) {
-            Demandes d = new Demandes(
+            Recrutements d = new Recrutements(
                     rst.getInt("reference"),
                     rst.getInt("idClient"),
-                    rst.getFloat("budget"),
+                    rst.getFloat("salaire"),
                     rst.getString("description"),
                     rst.getString("date"),
                     rst.getString("nom"));
@@ -59,7 +58,7 @@ public class DemandesService implements ICRUD<Demandes> {
 
     @Override
     public void supprimer(int ref) throws SQLException {
-            String req = "DELETE FROM demandes WHERE `reference`=?";
+            String req = "DELETE FROM recrutements WHERE `reference`=?";
             PreparedStatement ps = connexion.prepareStatement(req);
             ps.setInt(1, ref);
             ps.executeUpdate();
@@ -67,12 +66,12 @@ public class DemandesService implements ICRUD<Demandes> {
     }
 
     @Override
-    public void modifier(Demandes d) throws SQLException {
+    public void modifier(Recrutements d) throws SQLException {
         
-          String req = "UPDATE demandes SET  `nom`=?,`budget`=?,  `description`=? WHERE `nom`= ?";
+          String req = "UPDATE recrutements SET  `nom`=?,`salaire`=?,  `description`=? WHERE `nom`= ?";
      PreparedStatement ps = connexion.prepareStatement(req);
             ps.setString(1, d.getNom());
-            ps.setFloat(2, d.getBudget());
+            ps.setFloat(2, d.getSalaire());
             ps.setString(3, d.getDescription());
             ps.setString(4, d.getNom());
             
@@ -83,9 +82,9 @@ public class DemandesService implements ICRUD<Demandes> {
       
     }
 
-    public List<Demandes> Recherche(String searchString) throws SQLException {
-    List<Demandes> demandes = new ArrayList<>();
-    String req = "SELECT * FROM demandes WHERE nom LIKE ? OR date LIKE ? OR description LIKE ? OR budget LIKE ?";
+    public List<Recrutements> Recherche(String searchString) throws SQLException {
+    List<Recrutements> demandes = new ArrayList<>();
+    String req = "SELECT * FROM recrutements WHERE nom LIKE ? OR date LIKE ? OR description LIKE ? OR salaire LIKE ?";
     PreparedStatement ps = connexion.prepareStatement(req);
     ps.setString(1, "%" + searchString + "%");
     ps.setString(2, "%" + searchString + "%");
@@ -94,8 +93,8 @@ public class DemandesService implements ICRUD<Demandes> {
     ResultSet rst = ps.executeQuery();
 
     while (rst.next()) {
-        Demandes c = new Demandes(rst.getString("nom"),
-                rst.getFloat("budget"),
+        Recrutements c = new Recrutements(rst.getString("nom"),
+                rst.getFloat("salaire"),
                 rst.getString("date"),
                 rst.getString("description"));
         demandes.add(c);
@@ -104,12 +103,9 @@ public class DemandesService implements ICRUD<Demandes> {
     }
 
     @Override
-    public Demandes afficherById(int id) throws SQLException {
+    public Recrutements afficherById(int id) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
-
 }
 
 

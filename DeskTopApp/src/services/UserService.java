@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import Entity.Enum.Sexe;
-import Entity.Enum.TypeR;
 import Entity.Reclamation;
 import Utils.MyDB;
 import java.io.IOException;
@@ -46,21 +44,21 @@ public class UserService implements ICRUD<user>{
      @Override
     public void ajouter(user u) throws SQLException {
         try {
-        String requete = "insert into users (id_user,nom_user,prenom_user,login,mdp,date_nais_user,email,adresse,tel,sexe,role,photo_user) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        String requete = "insert into users (id_user,nom_user,prenom_user,login,password,date_nais_user,email,adresse,tel,sexe,roles,photo_user) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         
          ps = (PreparedStatement) connexion.prepareStatement(requete);
             ps.setInt(1, u.getId_user());
             ps.setString(2, u.getNom_user());
             ps.setString(3, u.getPrenom_user());
             ps.setString(4, u.getLogin());
-            ps.setString(5,u.getMdp());
+            ps.setString(5,u.getPassword());
            
             ps.setDate(6,new java.sql.Date(u.getDate_nais_user().getTime()));
             ps.setString(7, u.getEmail());
             ps.setString(8, u.getAdresse());
             ps.setString(9, u.getTel());
-            ps.setString(10,u.getSexe().toString());
-            ps.setString(11, u.getRole().toString());
+            ps.setString(10,u.getSexe());
+            ps.setString(11, u.getRoles());
 
             ps.setString(12, u.getPhoto_user());
              
@@ -83,22 +81,22 @@ public class UserService implements ICRUD<user>{
 /*****************************************************************************/
     @Override
     public void modifier(user t) throws SQLException {
-        String requete = "UPDATE users set nom_user=?,prenom_user=?,login=?,mdp=?,date_nais_user=?,email=?,adresse=?,tel=?,sexe=?,role=?,photo_user=? WHERE id_user=?";
+        String requete = "UPDATE users set nom_user=?,prenom_user=?,login=?,password=?,date_nais_user=?,email=?,adresse=?,tel=?,sexe=?,roles=?,photo_user=? WHERE id_user=?";
 
             ps = (PreparedStatement) connexion.prepareStatement(requete);
             ps.setString(1, t.getNom_user());
             ps.setString(2, t.getPrenom_user());
             ps.setString(3, t.getLogin());
-            ps.setString(4,t.getMdp());
+            ps.setString(4,t.getPassword());
            
             ps.setDate(5,new java.sql.Date(t.getDate_nais_user().getTime()));
             ps.setString(6, t.getEmail());
             ps.setString(7, t.getAdresse());
             ps.setString(8, t.getTel());
-            ps.setString(9,t.getSexe().toString());
-            ps.setString(10, t.getRole().toString());
-            ps.setString(11, t.getPhoto_user());
-            ps.setInt(12,t.getId_user());
+            ps.setString(9,t.getSexe());
+            ps.setString(11, t.getRoles());
+            ps.setString(12, t.getPhoto_user());
+            ps.setInt(13,t.getId_user());
            
             ps.executeUpdate();
         
@@ -107,8 +105,8 @@ public class UserService implements ICRUD<user>{
     }
 /************************************************************************/
 /***************************************************************************/
-    public void modifier_mdp(int id,String pass) throws SQLException {
-        String requete = "UPDATE users set mdp=? WHERE id_user=?";
+    public void modifier_password(int id,String pass) throws SQLException {
+        String requete = "UPDATE users set password=? WHERE id_user=?";
         try{
             ps = (PreparedStatement) connexion.prepareStatement(requete);
 
@@ -134,7 +132,7 @@ public class UserService implements ICRUD<user>{
             user u = new user(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
                     rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8),rst.getString(9),
 
-                    Sexe.valueOf(rst.getString(10)),TypeR.valueOf(rst.getString(11)),rst.getString(12)) ;
+                    rst.getString(10),rst.getString(11),rst.getString(12)) ;
             users.add(u);
         }
         return users;       }
@@ -153,7 +151,7 @@ public class UserService implements ICRUD<user>{
             u = new user(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
                   rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8),rst.getString(9),
 
-                  Sexe.valueOf(rst.getString(10)),TypeR.valueOf(rst.getString(11)),rst.getString(12)) ;
+                  rst.getString(10),rst.getString(11),rst.getString(12)) ;
         }
         return u; 
     }
@@ -168,7 +166,7 @@ public class UserService implements ICRUD<user>{
             u=new user(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
                 rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8),rst.getString(9),
 
-                Sexe.valueOf(rst.getString(10)),TypeR.valueOf(rst.getString(11)),rst.getString(12)) ;
+                rst.getString(10),rst.getString(11),rst.getString(12)) ;
               }
         
         }catch (SQLException ex){
@@ -188,7 +186,7 @@ public class UserService implements ICRUD<user>{
             u=new user(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
                 rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8),rst.getString(9),
 
-                Sexe.valueOf(rst.getString(10)),TypeR.valueOf(rst.getString(11)),rst.getString(12)) ;
+                rst.getString(10),rst.getString(11),rst.getString(12)) ;
               }
         
         }catch (SQLException ex){
@@ -224,7 +222,7 @@ public class UserService implements ICRUD<user>{
             if(rst.first()){
             u=new user(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
               rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8),rst.getString(9),
-              Sexe.valueOf(rst.getString(10)),TypeR.valueOf(rst.getString(11)),rst.getString(12)) ;
+              rst.getString(10),rst.getString(11),rst.getString(12)) ;
               }
         
         }catch (SQLException ex){
@@ -244,7 +242,7 @@ public class UserService implements ICRUD<user>{
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("depanini2023@gmail.com", "pqxelmxspbysyhyr");
+                return new PasswordAuthentication("depanini2023@gmail.com", "gpjhpzyjvtqycvlv");
             }
         });
         try {

@@ -5,7 +5,7 @@
  */
 package GUI.client;
 
-import Entity.Demandes;
+import Entity.Recrutements;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -18,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
-import services.DemandesService;
+import services.RecrutementService;
 
 /**
  * FXML Controller class
@@ -67,14 +67,14 @@ public class UIModifierController implements Initializable {
     }
         else
         {
-            DemandesService sc= new DemandesService();
-            sc.modifier(new Demandes (nom.getText(),Float.parseFloat(budget.getText()), descripton.getText())) ;
+            RecrutementService sc= new RecrutementService();
+            sc.modifier(new Recrutements (nom.getText(),Float.parseFloat(budget.getText()), descripton.getText())) ;
                 JOptionPane.showMessageDialog(null,"Demande modifiee avec succes");
         }
     }
 
-    void setTextFields(Demandes New) {
-   budget.setText(String.valueOf(New.getBudget()));
+    void setTextFields(Recrutements New) {
+   budget.setText(String.valueOf(New.getSalaire()));
         descripton.setText(New.getDescription());
          nom.setText(New.getNom());    }
     

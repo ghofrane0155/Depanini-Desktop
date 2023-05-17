@@ -16,21 +16,21 @@ public class admin {
 
     private int id_admin;
     private String login_admin;
-    private String mdp_admin;
+    private String password_admin;
     private String nom_admin;
     private String prenom_admin;
     private Date date_nais_admin;
     private String photo_admin;
-    private Sexe sexe_admin;
+    private String sexe_admin;
 
     public admin() {
     }
 
-    public admin(int id_admin, String login_admin, String mdp_admin, String nom_admin, String prenom_admin, Date date_nais_admin, String photo_admin, Sexe sexe_admin) {
+    public admin(int id_admin, String login_admin, String password_admin, String nom_admin, String prenom_admin, Date date_nais_admin, String photo_admin, String sexe_admin) {
 
         this.id_admin = id_admin;
         this.login_admin = login_admin;
-        this.mdp_admin = mdp_admin;
+        this.password_admin = password_admin;
         this.nom_admin = nom_admin;
         this.prenom_admin = prenom_admin;
         this.date_nais_admin = date_nais_admin;
@@ -39,9 +39,9 @@ public class admin {
 
     }
 
-    public admin(String login_admin, String mdp_admin, String nom_admin, String prenom_admin, Date date_nais_admin, String photo_admin, Sexe sexe_admin) {
+    public admin(String login_admin, String password_admin, String nom_admin, String prenom_admin, Date date_nais_admin, String photo_admin, String sexe_admin) {
         this.login_admin = login_admin;
-        this.mdp_admin = mdp_admin;
+        this.password_admin = password_admin;
         this.nom_admin = nom_admin;
         this.prenom_admin = prenom_admin;
         this.date_nais_admin = date_nais_admin;
@@ -60,8 +60,8 @@ public class admin {
         return login_admin;
     }
 
-    public String getMdp_admin() {
-        return mdp_admin;
+    public String getPassword_admin() {
+        return password_admin;
     }
 
     public String getNom_admin() {
@@ -80,7 +80,7 @@ public class admin {
         return photo_admin;
     }
 
-    public Sexe getSexe_admin() {
+    public String getSexe_admin() {
         return sexe_admin;
     }
 
@@ -92,8 +92,8 @@ public class admin {
         this.login_admin = login_admin;
     }
 
-    public void setMdp_admin(String mdp_admin) {
-        this.mdp_admin = mdp_admin;
+    public void setPassword_admin(String password_admin) {
+        this.password_admin = password_admin;
     }
 
     public void setNom_admin(String nom_admin) {
@@ -112,7 +112,7 @@ public class admin {
         this.photo_admin = photo_admin;
     }
 
-    public void setSexe_admin(Sexe sexe_admin) {
+    public void setSexe_admin(String sexe_admin) {
         this.sexe_admin = sexe_admin;
     }
 
@@ -122,7 +122,7 @@ public class admin {
     @Override
 
     public String toString() {
-        return "admin{" + "id_admin=" + id_admin + ", login_admin=" + login_admin + ", mdp_admin=" + mdp_admin + ", nom_admin=" + nom_admin + ", prenom_admin=" + prenom_admin + ", date_nais_admin=" + date_nais_admin + ", photo_admin=" + photo_admin + ", sexe_admin=" + sexe_admin + '}';
+        return "admin{" + "id_admin=" + id_admin + ", login_admin=" + login_admin + ", password_admin=" + password_admin + ", nom_admin=" + nom_admin + ", prenom_admin=" + prenom_admin + ", date_nais_admin=" + date_nais_admin + ", photo_admin=" + photo_admin + ", sexe_admin=" + sexe_admin + '}';
         
     }
 }

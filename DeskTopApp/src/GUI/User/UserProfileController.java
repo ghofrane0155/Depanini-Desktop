@@ -62,7 +62,10 @@ public class UserProfileController implements Initializable {
     public void displayInfo(user u) {
 
         label_np.setText(u.getNom_user() + " " + u.getPrenom_user());
-        label_role.setText(u.getRole().toString());
+        if(u.getRoles().equals("[\"ROLE_FREELANCER\"]"))
+            label_role.setText("FREELANCER");
+        else
+            label_role.setText("CLIENT");
         label_log.setText("@" + u.getLogin());
         label_phone.setText(u.getTel());
         label_mail.setText(u.getEmail());

@@ -1,8 +1,6 @@
 package GUI.User;
 
 import Entity.user;
-import Entity.Enum.Sexe;
-import Entity.Enum.TypeR;
 import static services.metiersUser.PasswordHashing.hashPassword;
 import services.metiersUser.Verif;
 import static services.metiersUser.Verif.showAlert;
@@ -79,10 +77,10 @@ public class InscriptionController implements Initializable {
 /****************************/
     user u = null;
     UserService us = new UserService();
-    ObservableList<String> typeList = FXCollections.observableArrayList("Freelancer", "Client");
+    ObservableList<String> typeList = FXCollections.observableArrayList("[\"ROLE_FREELANCER\"]", "[\"ROLE_CLIENT\"]");
    
-    Sexe gender=null;
-    TypeR type=null;
+    String gender=null;
+    String type=null;
     LocalDate localdate=null;
 /************************************/
    FileChooser fc; 
@@ -113,9 +111,9 @@ public class InscriptionController implements Initializable {
     @FXML
     private void getsexe(ActionEvent event) {
         if(btnfemme.isSelected())
-            gender=Sexe.valueOf(btnfemme.getText());
+            gender=btnfemme.getText();
         else if(btnhomme.isSelected())
-            gender=Sexe.valueOf(btnhomme.getText());      
+            gender=btnhomme.getText();      
     }
 /***************DatePicker**************************************************/
         @FXML
@@ -158,16 +156,16 @@ public class InscriptionController implements Initializable {
 
             
             String mdp=tfmdp.getText();
-            mdp=hashPassword(mdp);
+           // mdp=hashPassword(mdp);
              
-           mdp=hashPassword(tfmdp.getText());
+         //  mdp=hashPassword(tfmdp.getText());
             
         String mail=tfmail.getText();
         String tel=tftel.getText();
         
         Date date=null;
         date=Date.valueOf(localdate);     
-        type=TypeR.valueOf(tftype.getValue());
+        type=tftype.getValue();
                
 
         user u=new user(nom, prenom, login, mdp,date,mail, adr, tel,gender,type,photo);

@@ -22,6 +22,10 @@ public class userFXMain extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/GUI/User/Login.fxml"));
+      //  Parent root = FXMLLoader.load(getClass().getResource("/GUI/produit/Firstpage.fxml"));
+
+       //Parent root = FXMLLoader.load(getClass().getResource("/GUI/Categorie/FXMLCategorie.fxml"));
+      // Parent root = FXMLLoader.load(getClass().getResource("/GUI/Offre/FXMLOffre.fxml"));
         Scene scene =new Scene(root);
         stage.setScene(scene);
         stage.show();

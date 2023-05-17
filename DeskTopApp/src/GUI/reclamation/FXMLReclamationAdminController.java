@@ -234,7 +234,7 @@ public class FXMLReclamationAdminController implements Initializable {
                         setText(null);
                     } else {
                         Reclamation r = (Reclamation) getTableRow().getItem();
-                        Label l = new Label(r.getType().getLabel());
+                        Label l = new Label(r.getType());
                         setGraphic(l);
                         setText(null);
                     }

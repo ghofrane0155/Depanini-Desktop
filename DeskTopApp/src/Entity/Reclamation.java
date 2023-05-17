@@ -17,14 +17,14 @@ public class Reclamation {
     private int id_reclamation;   
     private int id_user;
     private int id_admin;
-    private Type type;
+    private String type;
     private String description;
     private Date date_reclamation;
     private String piece_jointe;
     private Statut statut;    
     private Date date_resolution;
 
-    public Reclamation(String nomUtilisateur,int id_user ,Type type,Statut statut,Date date_reclamation,int id_reclamation,String description,String piece_jointe ) {
+    public Reclamation(String nomUtilisateur,int id_user ,String type,Statut statut,Date date_reclamation,int id_reclamation,String description,String piece_jointe ) {
         this.nomUtilisateur = nomUtilisateur;
         this.id_user = id_user;
         this.type = type;
@@ -35,14 +35,14 @@ public class Reclamation {
         this.piece_jointe = piece_jointe;
     }
   
-    public Reclamation(Type type, String description, Date date_reclamation, String piece_jointe) {
+    public Reclamation(String type, String description, Date date_reclamation, String piece_jointe) {
         this.type = type;
         this.description = description;
         this.date_reclamation = date_reclamation;
         this.piece_jointe = piece_jointe;
     }
 
-    public Reclamation(int id_reclamation, int id_user, int id_admin, Type type, String description, Date date_reclamation, String piece_jointe, Statut statut, Date date_resolution) {
+    public Reclamation(int id_reclamation, int id_user, int id_admin, String type, String description, Date date_reclamation, String piece_jointe, Statut statut, Date date_resolution) {
         this.id_reclamation = id_reclamation;
         this.id_user = id_user;
         this.id_admin = id_admin;
@@ -55,7 +55,7 @@ public class Reclamation {
     }
 
     
-    public Reclamation(int id_user, int id_admin, Type type, String description, Date date_reclamation, String piece_jointe, Statut statut, Date date_resolution) {
+    public Reclamation(int id_user, int id_admin, String type, String description, Date date_reclamation, String piece_jointe, Statut statut, Date date_resolution) {
         this.id_user = id_user;
         this.id_admin = id_admin;
         this.type = type;
@@ -106,11 +106,11 @@ public class Reclamation {
         this.id_admin = id_admin;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
 
     }
@@ -156,7 +156,7 @@ public class Reclamation {
         this.date_resolution = date_resolution;
     }
 
-    public Reclamation(int id_user, Type type, String description, Date date_reclamation, String piece_jointe) {
+    public Reclamation(int id_user, String type, String description, Date date_reclamation, String piece_jointe) {
         this.id_user = id_user;
         this.type = type;
         this.description = description;

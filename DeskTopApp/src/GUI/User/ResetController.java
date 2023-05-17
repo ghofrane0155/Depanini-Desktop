@@ -55,7 +55,8 @@ public class ResetController implements Initializable {
         us = new UserService();
         String newpass=tfpass.getText();
         if(Verif.validatePass(newpass)){
-            u4.setMdp(hashPassword(newpass));             
+//            u4.setPassword(hashPassword(newpass));        
+            u4.setPassword(newpass);  
             us.modifier(u4);
             
             root =FXMLLoader.load(getClass().getResource("Login.fxml"));

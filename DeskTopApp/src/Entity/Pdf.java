@@ -31,16 +31,12 @@ public class Pdf {
 
         ContratsService sf = new ContratsService();
         document.add(new Paragraph("            Date  :"+LocalDateTime.now()));
-        document.add(new Paragraph("            Offre :"+f.getNom_offre()));
         document.add(new Paragraph("                      "));
         document.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------"));
-
+        document.add(new Paragraph("Termes et Conditions :"+f.getConditions()));
         document.add(new Paragraph("                      "));
-        document.add(new Paragraph("CIN :" + f.getCin()));
+        document.add(new Paragraph("Etat:" + f.getDate()));
         document.add(new Paragraph("                      "));
-        document.add(new Paragraph("Date Creation:" + f.getDate()));
-        document.add(new Paragraph("                      "));
-        document.add(new Paragraph("Description :" + f.getDescription()));
         document.add(new Paragraph("                      "));
 
        

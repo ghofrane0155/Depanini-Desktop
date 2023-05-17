@@ -134,7 +134,7 @@ public class FeedbackService implements ICRUD<Feedback> {
         while (rst.next()) {
             user u = new user(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getString(4),
                     rst.getString(5), rst.getDate(6), rst.getString(7), rst.getString(8), rst.getString(9),
-                    Entity.Enum.Sexe.valueOf(rst.getString(10)), Entity.Enum.TypeR.valueOf(rst.getString(11)), rst.getString(12));
+                    rst.getString(10), rst.getString(11), rst.getString(12));
             return u;
         }
 

@@ -7,7 +7,6 @@ package services;
 
 import Entity.admin;
 import Entity.user;
-import Entity.Enum.Sexe;
 import Utils.MyDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,7 +41,7 @@ public class AdminService{
         if(rst.first()){
             a=new admin(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),
 
-                rst.getString(5),rst.getDate(6),rst.getString(7),Sexe.valueOf(rst.getString(8))) ;
+                rst.getString(5),rst.getDate(6),rst.getString(7),rst.getString(8)) ;
 
         }
         

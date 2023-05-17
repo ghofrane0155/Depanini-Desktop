@@ -62,7 +62,7 @@ public class Calcul {
     private float total_income;
     
     public int total() throws SQLException{
-        String req ="SELECT sum(prixtotal) as n from tickets";
+        String req ="SELECT sum(prixtotale) as n from tickets";
         stm = conx.createStatement();
         ResultSet rst = stm.executeQuery(req);
         

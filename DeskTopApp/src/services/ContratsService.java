@@ -28,8 +28,8 @@ public class ContratsService implements ICRUD<Contrats>{
     
     @Override
     public void ajouter(Contrats d) throws SQLException {
-        String req = "INSERT INTO `contrats` ( `nom_offre` , `date` ,`description`,`price`,`cin` ) VALUES ( '"
-                 + d.getNom_offre()+ "', '" + d.getDate()+ "','" + d.getDescription()+ "', '" + d.getPrice()+ "', '" + d.getCin()+ "') ";
+        String req = "INSERT INTO `contrat` ( `reference` , `etat` ,`date`,`conditions` ) VALUES ( '"
+                 + d.getReference()+ "', '" + d.getEtat()+ "','" + d.getDate()+ "', '" + d.getConditions()+ "') ";
         stm = connexion.createStatement();
         stm.executeUpdate(req);
         System.out.println("Contrat ajoutee !");
@@ -38,17 +38,17 @@ public class ContratsService implements ICRUD<Contrats>{
     @Override
     public List<Contrats> afficher() throws SQLException {
         List<Contrats> contrats = new ArrayList<>();
-        String req = "select * from contrats";
+        String req = "select * from contrat";
         stm = connexion.createStatement();
         //ensemble de resultat
         ResultSet rst = stm.executeQuery(req);
 
         while (rst.next()) {
-            Contrats c = new Contrats(rst.getInt("id_contrat"),
-                    rst.getInt("cin"),
+            Contrats c = new Contrats(rst.getInt("id_contart"),
+                    rst.getInt("reference"),
+                    rst.getString("etat"),
                     rst.getString("date"),
-                    rst.getString("nom_offre"),
-                    rst.getString("description"));
+                    rst.getString("conditions"));
             contrats.add(c);
         }
       
@@ -57,7 +57,7 @@ public class ContratsService implements ICRUD<Contrats>{
 
     @Override
     public void supprimer(int IDC) throws SQLException {
-            String req = "DELETE FROM contrats WHERE `id_contrat`=?";
+            String req = "DELETE FROM contrat WHERE `id_contart`=?";
             PreparedStatement ps = connexion.prepareStatement(req);
             ps.setInt(1, IDC);
             ps.executeUpdate();
@@ -66,10 +66,10 @@ public class ContratsService implements ICRUD<Contrats>{
 
     @Override
     public void modifier(Contrats c) throws SQLException {
-     String req = "UPDATE contrats SET  `cin`=? WHERE `id_contrat`= ?";
+     String req = "UPDATE contrat SET  `conditions`=? WHERE `id_contart`= ?";
     
      PreparedStatement ps = connexion.prepareStatement(req);
-            ps.setInt(1, c.getCin());
+            ps.setString(1, c.getConditions());
             ps.setInt(2, c.getIDContrat());
             System.out.println(c.getIDContrat());
             ps.executeUpdate();
@@ -79,7 +79,7 @@ public class ContratsService implements ICRUD<Contrats>{
     }
 public List<Contrats> Recherche(String searchString) throws SQLException {
     List<Contrats> contrats = new ArrayList<>();
-    String req = "SELECT * FROM contrats WHERE nom_offre LIKE ? OR date LIKE ? OR description LIKE ? OR price LIKE ? OR cin LIKE ?";
+    String req = "SELECT * FROM contrat WHERE etat LIKE ? OR date LIKE ? OR conditions LIKE ? OR reference LIKE ?";
     PreparedStatement ps = connexion.prepareStatement(req);
     ps.setString(1, "%" + searchString + "%");
     ps.setString(2, "%" + searchString + "%");
@@ -90,10 +90,10 @@ public List<Contrats> Recherche(String searchString) throws SQLException {
     ResultSet rst = ps.executeQuery();
 
     while (rst.next()) {
-        Contrats c = new Contrats(rst.getInt("id_contrat"),rst.getInt("cin"),
+        Contrats c = new Contrats(rst.getInt("id_contart"),rst.getInt("reference"),
                 rst.getString("date"),
-                rst.getString("nom_offre"),
-                rst.getString("description"));
+                rst.getString("etat"),
+                rst.getString("conditions"));
         contrats.add(c);
     }
     return contrats;
@@ -103,7 +103,7 @@ public List<Contrats> Recherche(String searchString) throws SQLException {
    public int existe(String attribut, String valeur) throws Exception{
         int nb=0;
         try{
-            String req="select * from contrats where "+attribut+"='"+valeur+"'";
+            String req="select * from contrat where "+attribut+"='"+valeur+"'";
           PreparedStatement  ps=connexion.prepareStatement(req);
             ResultSet rst=ps.executeQuery();
               

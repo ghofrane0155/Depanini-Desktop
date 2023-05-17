@@ -319,9 +319,9 @@ public class AffichageController implements Initializable {
                
             // Send email to each participant
                 ParticipantService ps = new ParticipantService();
-                for (String email : emails) {
-                    ps.evoyerEmailToParticipantWhenEventDeleted(email, e1);
-                }
+//                for (String email : emails) {
+//                    ps.evoyerEmailToParticipantWhenEventDeleted(email, e1);
+//                }
         }
         
         catch (SQLException e1) {

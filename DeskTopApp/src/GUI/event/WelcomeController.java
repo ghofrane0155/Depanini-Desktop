@@ -123,7 +123,7 @@ public class WelcomeController implements Initializable {
         try {
             Connection conx = MyDB.getInstance().getConx();
             Statement statement = conx.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT IDEvent, SUM(prixtotal) AS totalprice FROM tickets GROUP BY IDEvent");
+            ResultSet resultSet = statement.executeQuery("SELECT IDEvent, SUM(prixtotale) AS totalprice FROM tickets GROUP BY IDEvent");
              // Populate the line chart with data series
             XYChart.Series<Number, Number> Series = new XYChart.Series<>();
             while (resultSet.next()) {

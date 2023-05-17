@@ -29,6 +29,7 @@ import javax.imageio.ImageIO;
 import services.ProduitsService;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.Initializable;
+import services.metiersUser.SessionUser;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 
@@ -63,6 +64,9 @@ public class AjouterProduitController implements Initializable{
 
     @FXML
     private TextField nom_produit;
+    
+     @FXML
+    private TextField id_user;
 
     @FXML
     private TextField prix_produit;
@@ -89,7 +93,7 @@ public class AjouterProduitController implements Initializable{
      
         fc = new FileChooser();
         fc.getExtensionFilters().addAll(
-            new ExtensionFilter("IMG Files", "*.png","*.jpg","*.gif"));
+            new ExtensionFilter("IMG Files", ".png",".jpg","*.gif"));
          
          selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
@@ -145,7 +149,8 @@ public class AjouterProduitController implements Initializable{
 //        }
     ProduitsService sp = new ProduitsService();
     Produits p; 
-                 p = new Produits(nom, categorie, prix, desc, pic, Integer.parseInt(code));
+    int id = 2;
+                 p = new Produits(id,nom, categorie, prix, desc, pic, Integer.parseInt(code));
                  sp.ajouterP(p);
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("success");

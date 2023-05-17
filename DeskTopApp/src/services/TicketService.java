@@ -31,7 +31,7 @@ public class TicketService implements InterfaceCRUD<Ticket> {
     @Override
     public void ajouter(Ticket t) throws SQLException {
         String req;
-        req = "INSERT INTO `Tickets`(`id_user`, `IDEvent`, `quantite`,prixtotal,login) VALUES ("
+        req = "INSERT INTO `Tickets`(`id_user`, `IDEvent`, `quantite`,prixtotale,login) VALUES ("
                  + t.getId_user() + "," + t.getIDEvent() + "," + t.getPrixTicket() +"," + t.getPrixtotal() + ",'" + t.getLogin() + "') ";
         stm = conx.createStatement();
 
@@ -82,7 +82,7 @@ public class TicketService implements InterfaceCRUD<Ticket> {
                     rst.getInt("id_user"),
                     rst.getInt("IDEvent"),
                     rst.getInt("quantite"),
-                    rst.getInt("prixtotal"),
+                    rst.getInt("prixtotale"),
                     rst.getString("login")
             );
             Tickets.add(t);
@@ -107,7 +107,7 @@ public class TicketService implements InterfaceCRUD<Ticket> {
                     rst.getInt("id_user"),
                     rst.getInt("IDEvent"),
                     rst.getInt("quantite"),
-                    rst.getInt("prixtotal"),
+                    rst.getInt("prixtotale"),
                     rst.getString("login")
             );
             Tickets.add(t);

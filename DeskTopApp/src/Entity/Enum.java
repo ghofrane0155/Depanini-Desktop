@@ -8,13 +8,6 @@ package Entity;
 public class Enum {
     
 
-    public static enum TypeR {
-        Freelancer,Client;
-    }
-    
-    public static enum Sexe {
-        femme,homme;
-    }
        public static enum TypeO {
         presentiel,enligne;
     }

@@ -112,7 +112,7 @@ public class NotificationController extends ProfileController implements Initial
 
 
         tfnom_prenom.setText(u.getNom_user()+" "+u.getPrenom_user());
-        String path=u.getPhoto_user();
+        String path="/GUI/Images/"+u.getPhoto_user();
         Image img=new Image(getClass().getResourceAsStream(path));
         tfimg.setImage(img);
 	}

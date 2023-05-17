@@ -164,7 +164,7 @@ public class TableViewController implements Initializable {
                  return true; //found a match in t (user)
             }else if (t.getEmail().toLowerCase().indexOf(searchkeyword) > -1) {
                  return true; //found a match in t (user)
-            }else if (t.getRole().toString().toLowerCase().indexOf(searchkeyword) > -1) {
+            }else if (t.getRoles().toString().toLowerCase().indexOf(searchkeyword) > -1) {
                  return true; //found a match in t (user)
             }else if (t.getTel().toLowerCase().indexOf(searchkeyword) > -1) {
                  return true; //found a match in t (user)

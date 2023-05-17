@@ -93,7 +93,7 @@ public class FXMLReclamationController implements Initializable {
         Type_rec_option.getItems().addAll(type);
 
     }
-    // ************Email Validator function **********************
+    // ***********Email Validator function *********************
 
     public static boolean isValidEmail(String email) {
         // Expression régulière pour vérifier l'adresse e-mail
@@ -108,9 +108,9 @@ public class FXMLReclamationController implements Initializable {
         // Vérifier si l'adresse e-mail correspond à l'expression régulière
         return matcher.matches();
     }
-    // ***************************************************
+    // *************************************************
 
-    // ************Submit function **********************
+    // ***********Submit function *********************
     @FXML
     private void submit(ActionEvent event) throws IOException {
 
@@ -165,7 +165,7 @@ public class FXMLReclamationController implements Initializable {
                     t = Type.OTHER;
                     break;
             }
-            Reclamation rec = new Reclamation(t, description.getText(), date, name_file_selected.getText());
+            Reclamation rec = new Reclamation(t.toString(), description.getText(), date, name_file_selected.getText());
             try {
                 rs.ajouterSelonEmailUser(email.getText(), rec);
             } catch (SQLException ex) {
@@ -184,9 +184,9 @@ public class FXMLReclamationController implements Initializable {
         }
 
     }
-    // ***************************************************
+    // *************************************************
 
-    // ************Upload File function **********************
+    // ***********Upload File function *********************
     @FXML
     private void select_file(ActionEvent event) {
         FileChooser fc = new FileChooser();
@@ -198,7 +198,7 @@ public class FXMLReclamationController implements Initializable {
             System.out.println("file is not valid");
         }
     }
-// ***************************************************
+// *************************************************
 
     @FXML
     private void depanini_clicked(MouseEvent event) throws IOException {

@@ -6,8 +6,7 @@
 package GUI.client;
 
 import Entity.Contrats;
-import Entity.Demandes;
-import Entity.Offres;
+import Entity.Recrutements;
 import Entity.Pdf;
 
 import java.io.BufferedReader;
@@ -52,7 +51,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
-import services.DemandesService;
+import services.RecrutementService;
 import Utils.MyDB;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
@@ -67,7 +66,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.transform.Scale;
 import services.ContratsService;
-import services.OffresServices;
 
 /**
  * FXML Controller class
@@ -76,32 +74,16 @@ import services.OffresServices;
  */
 public class UIDemandeController implements Initializable {
 
-    public Offres o;
-    public List<Offres> offres;
-    private OffresServices os = new OffresServices();
+  
 
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
     @FXML
     private BarChart<?, ?> barChart;
-    @FXML
-    private TableView<Offres> table;
-    @FXML
-    private TableColumn<Offres, Double> prix_offre;
-    @FXML
-    private TableColumn<Offres, String> description_offre;
-    @FXML
-    private TableColumn<Offres, String> nom_offre;
-    @FXML
-    private TableColumn<Offres, Integer> id_categorie;
-    @FXML
-    private TableColumn<Offres, Enum> type_offre;
-    @FXML
-    private Button signer;
+   
     @FXML
     private TableView<Contrats> tableC;
-    @FXML
     private TableColumn<Contrats, Integer> cin;
     @FXML
     private TableColumn<Contrats, String> dateC;
@@ -119,16 +101,11 @@ public class UIDemandeController implements Initializable {
     private ImageView buttonsearch1;
     @FXML
     private ComboBox<String> ExporterListe;
-    @FXML
     private TableColumn<Contrats, Integer> id_offre;
     @FXML
     private TextField id;
     @FXML
-    private ImageView audience;
-    @FXML
     private ImageView imageview9;
-    @FXML
-    private Button retour;
 
     public UIDemandeController() {
         connect = MyDB.getInstance().getConx();
@@ -150,7 +127,6 @@ public class UIDemandeController implements Initializable {
 
     Image image4 = new Image(getClass().getResourceAsStream("/GUI/images/modifie.PNG"));
     Image image7 = new Image(getClass().getResourceAsStream("/GUI/images/modifie.PNG"));
-    Image image8 = new Image(getClass().getResourceAsStream("/GUI/images/audience.PNG"));
     Image image9 = new Image(getClass().getResourceAsStream("/GUI/images/client.PNG"));
 
 
@@ -179,19 +155,19 @@ public class UIDemandeController implements Initializable {
     @FXML
     private TextField filter;
     @FXML
-    private TableView<Demandes> Table;
+    private TableView<Recrutements> Table;
     @FXML
-    private TableColumn<Demandes, String> nomcol;
+    private TableColumn<Recrutements, String> nomcol;
     @FXML
-    private TableColumn<Demandes, Float> budgetcol;
+    private TableColumn<Recrutements, Float> budgetcol;
     @FXML
-    private TableColumn<Demandes, String> datecol;
+    private TableColumn<Recrutements, String> datecol;
     @FXML
-    private TableColumn<Demandes, String> descriptioncol;
+    private TableColumn<Recrutements, String> descriptioncol;
 
-    public Demandes d;
-    public List<Demandes> demande;
-    private DemandesService de = new DemandesService();
+    public Recrutements d;
+    public List<Recrutements> demande;
+    private RecrutementService de = new RecrutementService();
 
     public Contrats c;
     public List<Contrats> contrat;
@@ -224,16 +200,15 @@ public class UIDemandeController implements Initializable {
 
         buttonmodifier.setImage(image4);
         buttonmodifier1.setImage(image7);
-        audience.setImage(image8);
          imageview9.setImage(image9);
 
 
-        ObservableList<Demandes> demandelist = FXCollections.observableArrayList();
+        ObservableList<Recrutements> demandelist = FXCollections.observableArrayList();
 
-        nomcol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("nom"));
-        budgetcol.setCellValueFactory(new PropertyValueFactory<Demandes, Float>("budget"));
-        descriptioncol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("description"));
-        datecol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("date"));
+        nomcol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("nom"));
+        budgetcol.setCellValueFactory(new PropertyValueFactory<Recrutements, Float>("salaire"));
+        descriptioncol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("description"));
+        datecol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("date"));
 
         try {
             demande = de.afficher();
@@ -251,28 +226,14 @@ public class UIDemandeController implements Initializable {
             }
         });
 
-        ObservableList<Offres> offreList = FXCollections.observableArrayList();
-
-        prix_offre.setCellValueFactory(new PropertyValueFactory<Offres, Double>("prix_offre"));
-        description_offre.setCellValueFactory(new PropertyValueFactory<Offres, String>("description_offre"));
-        nom_offre.setCellValueFactory(new PropertyValueFactory<Offres, String>("nom_offre"));
-        id_categorie.setCellValueFactory(new PropertyValueFactory<Offres, Integer>("type_cat"));
-        type_offre.setCellValueFactory(new PropertyValueFactory<Offres, Enum>("type_offre"));
-        try {
-            offres = os.afficher();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        offreList.addAll(offres);
-        table.setItems(offreList);
+    
 
         ObservableList<Contrats> ContratsList = FXCollections.observableArrayList();
 
-        id_offre.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("IDContrat"));
-        cin.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("cin"));
+        //id_offre.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("id_contart"));
         dateC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("date"));
-        cible.setCellValueFactory(new PropertyValueFactory<Contrats, String>("nom_offre"));
-        descriptionC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("description"));
+        cible.setCellValueFactory(new PropertyValueFactory<Contrats, String>("Etat"));
+        descriptionC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("conditions"));
         try {
             contrat = Cs.afficher();
         } catch (SQLException ex) {
@@ -370,16 +331,16 @@ public class UIDemandeController implements Initializable {
             label3.setText("");
         }
         try {
-            DemandesService sp = new DemandesService();
-            Demandes p = new Demandes(Integer.parseInt(id.getText()), Float.parseFloat(budget.getText()), descripton.getText(), date.getValue().toString(), nom.getText());
+            RecrutementService sp = new RecrutementService();
+            Recrutements p = new Recrutements(Integer.parseInt(id.getText()), Float.parseFloat(budget.getText()), descripton.getText(), date.getValue().toString(), nom.getText());
 
             sp.ajouter(p);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("success");
-            alert.setContentText("Demande ajoutee avec succes");
+            alert.setContentText("recrutement ajoutee avec succes");
             alert.show();
-            System.out.println("Demande ajoutee");
+            System.out.println("recrutement ajoutee");
         } catch (SQLException ex) {
             ex.getMessage();
         }
@@ -391,13 +352,13 @@ public class UIDemandeController implements Initializable {
     private void recherche(MouseEvent event) {
         String searchString = filter.getText();
 
-        ObservableList<Demandes> demandelist = FXCollections.observableArrayList();
+        ObservableList<Recrutements> demandelist = FXCollections.observableArrayList();
 
         id_offre.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("IDContrat"));
-        nomcol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("nom"));
-        budgetcol.setCellValueFactory(new PropertyValueFactory<Demandes, Float>("budget"));
-        descriptioncol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("description"));
-        datecol.setCellValueFactory(new PropertyValueFactory<Demandes, String>("date"));
+        nomcol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("nom"));
+        budgetcol.setCellValueFactory(new PropertyValueFactory<Recrutements, Float>("salaire"));
+        descriptioncol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("description"));
+        datecol.setCellValueFactory(new PropertyValueFactory<Recrutements, String>("date"));
 
         try {
             demande = de.Recherche(searchString);
@@ -442,8 +403,8 @@ public class UIDemandeController implements Initializable {
 
     @FXML
     private void supprimer(MouseEvent event) throws Exception {
-        DemandesService Sf = new DemandesService();
-        List<Demandes> listeFr;
+        RecrutementService Sf = new RecrutementService();
+        List<Recrutements> listeFr;
         if (Table.getSelectionModel().getSelectedItem() != null) {
             int Matricule = Table.getSelectionModel().getSelectedItem().getRef();
             Sf.supprimer(Matricule);
@@ -460,7 +421,7 @@ public class UIDemandeController implements Initializable {
 
     @FXML
     private void modifier(MouseEvent event) throws SQLException {
-        Demandes New = Table.getSelectionModel().getSelectedItem();
+        Recrutements New = Table.getSelectionModel().getSelectedItem();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/GUI/client/UIModifier.fxml"));
         try {
@@ -479,7 +440,7 @@ public class UIDemandeController implements Initializable {
     }
 
     private void calcul() {
-        String query = "SELECT COUNT(DISTINCT idClient) AS totalClients FROM demandes";
+        String query = "SELECT COUNT(DISTINCT idClient) AS totalClients FROM recrutements";
         try {
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -493,7 +454,7 @@ public class UIDemandeController implements Initializable {
     }
 
     private void chart() {
-        String chartSql = "SELECT date, COUNT(idClient) FROM demandes GROUP BY date ";
+        String chartSql = "SELECT date, COUNT(idClient) FROM recrutements GROUP BY date ";
         connect = MyDB.getInstance().getConx();
         try {
             XYChart.Series chartData = new XYChart.Series();
@@ -511,7 +472,7 @@ public class UIDemandeController implements Initializable {
     }
 
     private void Updatechart() {
-        String chartSql = "SELECT date, COUNT(idClient) FROM demandes GROUP BY date ";
+        String chartSql = "SELECT date, COUNT(idClient) FROM recrutements GROUP BY date ";
         connect = MyDB.getInstance().getConx();
         try {
             barChart.getData().clear(); // clear existing data
@@ -529,35 +490,17 @@ public class UIDemandeController implements Initializable {
         }
     }
 
-    @FXML
-    private void signer(ActionEvent event) {
-        Offres NewO = table.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/GUI/client/UISigner.fxml"));
-        try {
-            loader.load();
-        } catch (IOException ex) {
-            System.err.println(ex.getMessage());
-        }
-        UISignerController fnc = loader.getController();
-        fnc.setTextFields(NewO);
-        Parent parent = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(parent));
-        stage.initStyle(StageStyle.UTILITY);
-        stage.show();
-    }
+   
 
     @FXML
     private void rechercherC(MouseEvent event) {
         String searchString = rechercher.getText();
         ObservableList<Contrats> ContratsList = FXCollections.observableArrayList();
 
-        id_offre.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("IDContrat"));
-        cin.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("cin"));
+        //id_offre.setCellValueFactory(new PropertyValueFactory<Contrats, Integer>("id_contart"));
         dateC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("date"));
-        cible.setCellValueFactory(new PropertyValueFactory<Contrats, String>("nom_offre"));
-        descriptionC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("description"));
+        cible.setCellValueFactory(new PropertyValueFactory<Contrats, String>("Etat"));
+        descriptionC.setCellValueFactory(new PropertyValueFactory<Contrats, String>("conditions"));
 
         try {
             contrat = Cs.Recherche(searchString);
@@ -614,7 +557,7 @@ public class UIDemandeController implements Initializable {
             Contrats f = tableC.getSelectionModel().getSelectedItem();
             Pdf pd = new Pdf();
             try {
-                pd.GeneratePdf("" + f.getNom_offre() + "", f, f.getIDContrat());
+                pd.GeneratePdf("" + f.getConditions() + "", f, f.getIDContrat());
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("PDF");
                 alert.setHeaderText(null);
@@ -671,17 +614,6 @@ public class UIDemandeController implements Initializable {
 
     private void ImprimerAction(ActionEvent event) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
         printNode(tableC);
-    }
-
-    @FXML
-    private void retour(ActionEvent event) throws IOException {
-        Parent AjouterParent = FXMLLoader.load(getClass().getResource("/GUI/userHome/userHomePageClient.fxml"));
-        Scene AjouterScene = new Scene(AjouterParent);
-
-        //this line gets the stage by force
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(AjouterScene);
-        window.show();
     }
 
 }

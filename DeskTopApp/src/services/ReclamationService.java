@@ -44,7 +44,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
     String email_user = "";
 
     public void evoyerEmailToAdmin(String email, Reclamation t) throws IOException {
-        // *************************Partie evoyer par mail API ****************************
+        // ************************Partie evoyer par mail API ***************************
         //  la session pour l'envoie d'un email
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -54,7 +54,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("yousseffarhat818@gmail.com", "cerbtzsaklmkfbde");
+                return new PasswordAuthentication("yousseffarhat818@gmail.com", "jqfkkorkljwnecro");
             }
         });
         try {
@@ -65,7 +65,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
             // Recipients
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("yousseffarhat818@gmail.com"));
             // Objet de l'email
-            message.setSubject(t.getType().getLabel());
+            message.setSubject(t.getType().toString());
             Multipart emailContent = new MimeMultipart();
 
             // creer la parite message de l'email
@@ -90,7 +90,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
     }
 
     public void evoyerEmailToUser(String email, Reclamation t) throws IOException {
-        // *************************Partie evoyer par mail API ****************************
+        // ************************Partie evoyer par mail API ***************************
         //  la session pour l'envoie d'un email
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -100,7 +100,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("yousseffarhat818@gmail.com", "cerbtzsaklmkfbde");
+                return new PasswordAuthentication("yousseffarhat818@gmail.com", "jqfkkorkljwnecro");
             }
         });
         try {
@@ -137,17 +137,17 @@ public class ReclamationService implements ICRUD<Reclamation> {
         try {
             //recuperation id_user appartir de l'email
             int id_u = 0;
-            String req2 = "Select `id_user` from `users` where email=" + "'" + email + "'";
+            String req2 = "Select id_user from users where email=" + "'" + email + "'";
 
             Statement stm = conx.createStatement();
             ResultSet rs = stm.executeQuery(req2);
             while (rs.next()) {
                 id_u = rs.getInt(1);
             }
-            String req = "INSERT INTO reclamations (`id_user`,`type` ,`description`, `date_reclamation`, `piece_jointe`)VALUES (?,?,?,?,?)";
+            String req = "INSERT INTO reclamations (id_user,`type` ,`description`, date_reclamation, piece_jointe)VALUES (?,?,?,?,?)";
             PreparedStatement ps = conx.prepareStatement(req);
             ps.setInt(1, id_u);
-            ps.setString(2, t.getType().getLabel());
+            ps.setString(2, t.getType());
             ps.setString(3, t.getDescription());
             ps.setDate(4, new java.sql.Date(t.getDate_reclamation().getTime()));
             ps.setString(5, t.getPiece_jointe());
@@ -157,16 +157,16 @@ public class ReclamationService implements ICRUD<Reclamation> {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        evoyerEmailToAdmin(email, t);
+       // evoyerEmailToAdmin(email, t);
     }
 
     @Override
     public void ajouter(Reclamation t) throws SQLException {
         try {
-            String req = "INSERT INTO reclamations (`id_user`,`type` ,`description`, `date_reclamation`, `piece_jointe`)VALUES (?,?,?,?,?)";
+            String req = "INSERT INTO reclamations (id_user,`type` ,`description`, date_reclamation, piece_jointe)VALUES (?,?,?,?,?)";
             PreparedStatement ps = conx.prepareStatement(req);
             ps.setInt(1, t.getId_user());
-            ps.setString(2, t.getType().getLabel());
+            ps.setString(2, t.getType());
             ps.setString(3, t.getDescription());
             ps.setDate(4, new java.sql.Date(t.getDate_reclamation().getTime()));
             ps.setString(5, t.getPiece_jointe());
@@ -180,7 +180,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
     @Override
     public void modifier(Reclamation t) throws SQLException {
         try {
-            String req = "UPDATE  reclamations SET `date_reclamation`=?,`id_user`=?,`description`=?,`piece_jointe`=?,`statut`=?,`date_resolution`=? WHERE `id_reclamation`= ?";
+            String req = "UPDATE  reclamations SET date_reclamation`=?,id_user`=?,`description`=?,`piece_jointe`=?,`statut`=?,`date_resolution`=? WHERE `id_reclamation`= ?";
             PreparedStatement ps = conx.prepareStatement(req);
             ps.setDate(1, new java.sql.Date(t.getDate_reclamation().getTime()));
             ps.setInt(2, t.getId_user());
@@ -201,7 +201,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
             
             //recuperation id_user appartir de l'email
 
-            String req2 = "Select `email` from `users` where id_user="+t.getId_user();
+            String req2 = "Select email from users where id_user="+t.getId_user();
            
             Statement stm;
             try {
@@ -215,7 +215,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
             }
-            String req = "UPDATE  reclamations SET `statut`=?,`date_resolution`=? WHERE `id_reclamation`= ?";
+            String req = "UPDATE  reclamations SET statut`=?,date_resolution`=? WHERE `id_reclamation`= ?";
             PreparedStatement ps = conx.prepareStatement(req);
             ps.setString(1, t.getStatut().getLabel());
             ps.setDate(2, new java.sql.Date(t.getDate_resolution().getTime()));
@@ -226,12 +226,12 @@ public class ReclamationService implements ICRUD<Reclamation> {
             System.out.println(ex.getMessage());
         }
         
-        try {
-            
-            evoyerEmailToUser(email_user, t);
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
+//        try {
+//            
+//            evoyerEmailToUser(email_user, t);
+//        } catch (IOException ex) {
+//            System.out.println(ex.getMessage());
+//        }
     }
 
     @Override
@@ -284,7 +284,7 @@ public class ReclamationService implements ICRUD<Reclamation> {
                 String piece_jointe = rs.getString(7);
                 Statut statut = Statut.valueOf(rs.getString(8));
                 Date date_resolution = rs.getDate(9);
-                Reclamation c = new Reclamation(id_reclamation, id_user, id_admin, t, description, date_reclamation, piece_jointe, statut, date_resolution);
+                Reclamation c = new Reclamation(id_reclamation, id_user, id_admin, t.toString(), description, date_reclamation, piece_jointe, statut, date_resolution);
                 result.add(c);
 
             }
@@ -330,8 +330,8 @@ public class ReclamationService implements ICRUD<Reclamation> {
                 int id_reclamation =rs.getInt(6);
                 String description = rs.getString(7);
                 String piece_jointe = rs.getString(8);
-                
-                Reclamation c = new Reclamation(nom_user,id_uesr,t, statut, date_reclamation,id_reclamation,description,piece_jointe);
+               
+                Reclamation c = new Reclamation(nom_user,id_uesr,rs.getString(2), statut, date_reclamation,id_reclamation,description,piece_jointe);
                 result.add(c);
 
             }

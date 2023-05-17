@@ -91,22 +91,23 @@ public class LoginController implements Initializable {
             tfpass.setText(textfield.getText());
         }
 
-        String mdp = hashPassword(tfpass.getText());
+      //  String mdp = hashPassword(tfpass.getText());
+      String mdp = tfpass.getText();
 
         if (login.equals("") || mdp.equals("")) {
             showAlert(Alert.AlertType.ERROR, "Données erronés", "Verifier les données", "Veuillez bien renseigner tous les champs !");
         } else {
             u = us.getUserByLogin(login);
             if (u != null) {
-                if (u.getMdp().equals(mdp)) {
+                if (u.getPassword().equals(mdp)) {
 
                     user.setCurrent_User(u);
-                    SessionUser.getInstace(u.getId_user(), u.getNom_user(), u.getPrenom_user(), u.getLogin(), u.getMdp(), u.getDate_nais_user(), u.getEmail(), u.getAdresse(), u.getTel(), u.getSexe(), u.getRole(), u.getPhoto_user());
+                    SessionUser.getInstace(u.getId_user(), u.getNom_user(), u.getPrenom_user(), u.getLogin(), u.getPassword(), u.getDate_nais_user(), u.getEmail(), u.getAdresse(), u.getTel(), u.getSexe(), u.getRoles(), u.getPhoto_user());
                     
-                    if(u.getRole().toString().equals("Freelancer"))
+                    if(u.getRoles().toString().equals("[\"ROLE_FREELANCER\"]"))
                       root = FXMLLoader.load(getClass().getResource("/GUI/userHome/userHomePageFreelancer.fxml"));  
                     else
-                        root = FXMLLoader.load(getClass().getResource("/GUI/userHome/userHomePage.fxml"));
+                        root = FXMLLoader.load(getClass().getResource("/GUI/userHome/userHomePageClient.fxml"));
                     
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
@@ -120,7 +121,7 @@ public class LoginController implements Initializable {
                 a = as.getAdminByLogin(login);
                 if (a != null) {
 
-                    if (a.getMdp_admin().equals(mdp)) {
+                    if (a.getPassword_admin().equals(mdp)) {
                         root = FXMLLoader.load(getClass().getResource("/GUI/Admin/TableView.fxml"));
                         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         Scene scene = new Scene(root);

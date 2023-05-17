@@ -12,13 +12,13 @@ public class user {
     private String nom_user;
     private String prenom_user;
     private String login;
-    private String mdp;
+    private String password;
     private Date date_nais_user;
     private String email;
     private String adresse;
     private String tel;
-    private Sexe sexe;
-    private TypeR role;
+    private String sexe;
+    private String roles;
     private String photo_user;
    // private Session session;
     
@@ -27,46 +27,46 @@ public class user {
     public user() {
     }
 
-    public user(int id_user, String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, Sexe sexe, TypeR role, String photo_user) {
+    public user(int id_user, String nom_user, String prenom_user, String login, String password, Date date_nais_user, String email, String adresse, String tel, String sexe,String roles, String photo_user) {
         this.id_user = id_user;
         this.nom_user = nom_user;
         this.prenom_user = prenom_user;
         this.login = login;
-        this.mdp = mdp;
+        this.password = password;
         this.date_nais_user = date_nais_user;
         this.email = email;
         this.adresse = adresse;
         this.tel = tel;
         this.sexe = sexe;
-        this.role = role;
+        this.roles = roles;
         this.photo_user = photo_user;
     }
 
-    public user(String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, Sexe sexe, TypeR role, String photo_user) {
+    public user(String nom_user, String prenom_user, String login, String password, Date date_nais_user, String email, String adresse, String tel, String sexe,String roles, String photo_user) {
         this.nom_user = nom_user;
         this.prenom_user = prenom_user;
         this.login = login;
-        this.mdp = mdp;
+        this.password = password;
         this.date_nais_user = date_nais_user;
         this.email = email;
         this.adresse = adresse;
         this.tel = tel;
         this.sexe = sexe;
-        this.role = role;
+        this.roles = roles;
         this.photo_user = photo_user;
     }
 
-    public user(String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, Sexe sexe, TypeR role) {
+    public user(String nom_user, String prenom_user, String login, String password, Date date_nais_user, String email, String adresse, String tel, String sexe,String roles) {
         this.nom_user = nom_user;
         this.prenom_user = prenom_user;
         this.login = login;
-        this.mdp = mdp;
+        this.password = password;
         this.date_nais_user = date_nais_user;
         this.email = email;
         this.adresse = adresse;
         this.tel = tel;
         this.sexe = sexe;
-        this.role = role;
+        this.roles = roles;
     }
     
 /****************************************************/
@@ -86,8 +86,8 @@ public class user {
         return login;
     }
 
-    public String getMdp() {
-        return mdp;
+    public String getPassword() {
+        return password;
     }
 
     public String getEmail() {
@@ -102,7 +102,7 @@ public class user {
         return tel;
     }
 
-    public Sexe getSexe() {
+    public String getSexe() {
         return sexe;
     }
 
@@ -110,8 +110,8 @@ public class user {
         return date_nais_user;
     }
 
-    public TypeR getRole() {
-        return role;
+    public String getRoles() {
+        return roles;
     }
 
     public String getPhoto_user() {
@@ -139,8 +139,8 @@ public class user {
         this.login = login;
     }
 
-    public void setMdp(String mdp) {
-        this.mdp = mdp;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setEmail(String email) {
@@ -155,7 +155,7 @@ public class user {
         this.tel = tel;
     }
 
-    public void setSexe(Sexe sexe) {
+    public void setSexe(String sexe) {
         this.sexe = sexe;
     }
 
@@ -163,8 +163,9 @@ public class user {
         this.date_nais_user = date_nais_user;
     }
 
-    public void setRole(TypeR role) {
-        this.role = role;
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 
     public void setPhoto_user(String photo_user) {
@@ -174,12 +175,11 @@ public class user {
     public static void setCurrent_User(user Current_User) {
         user.Current_User = Current_User;
     }
-
     
 /*************************************************************/
     @Override
     public String toString() {
-        return "user{" + "id_user=" + id_user + ", nom_user=" + nom_user + ", prenom_user=" + prenom_user + ", login=" + login + ", mdp=" + mdp + ", date_nais_user=" + date_nais_user + ", email=" + email + ", adresse=" + adresse + ", tel=" + tel + ", sexe=" + sexe + ", role=" + role + ", photo_user=" + photo_user + '}';
+        return "user{" + "id_user=" + id_user + ", nom_user=" + nom_user + ", prenom_user=" + prenom_user + ", login=" + login + ", password=" + password + ", date_nais_user=" + date_nais_user + ", email=" + email + ", adresse=" + adresse + ", tel=" + tel + ", sexe=" + sexe + ", roles=" + roles + ", photo_user=" + photo_user + '}';
     }
 /************************************************************/ 
            

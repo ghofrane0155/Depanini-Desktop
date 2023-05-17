@@ -71,7 +71,7 @@ public class UIModifierContratController implements Initializable {
     }
 
     void setTextFields(Contrats New) {
-   cin.setText(String.valueOf(New.getCin()));
+   cin.setText(String.valueOf(New.getDate()));
          id_contrat = New.getIDContrat();
 
             }

@@ -196,9 +196,9 @@ public class ModificationController implements Initializable {
 
             // Send email to each participant
             ParticipantService ps = new ParticipantService();
-            for (String email : emails) {
-                ps.evoyerEmailToParticipantWhenEventpostponed(email, e1);
-            }
+//            for (String email : emails) {
+//                ps.evoyerEmailToParticipantWhenEventpostponed(email, e1);
+//            }
 
         } catch (SQLException e1) {
             // handle the exception

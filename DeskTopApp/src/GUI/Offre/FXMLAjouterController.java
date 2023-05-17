@@ -40,7 +40,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import services.OffresServices;
-import org.controlsfx.control.Notifications;
+//import org.controlsfx.control.Notifications;
 import javafx.util.Duration;
 
 /**
@@ -70,16 +70,17 @@ public class FXMLAjouterController implements Initializable {
     @FXML
     private ImageView img;
     @FXML
-    private ComboBox<String> tf_cat;
+    private TextField categorie;
     
-    TypeC type=null;
-    TypeO typeo=null;
+    
+
+  
 
     OffresServices os=new OffresServices();
     /**
      * Initializes the controller class.
      */
-     ObservableList <String> typeList=FXCollections.observableArrayList("Informatique","Baby_sitting","Demenagement","Couture","Beaute","Traduction");
+     
     @FXML
     private Button btnaout1;
     @FXML
@@ -91,10 +92,11 @@ public class FXMLAjouterController implements Initializable {
      public FXMLAjouterController() {
         connexion = MyDB.getInstance().getConx();
     }
+     String typeo;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        tf_cat.setItems(typeList);
+       
         return_home.setOnMouseClicked(((event) -> {
             try {
                
@@ -112,11 +114,11 @@ public class FXMLAjouterController implements Initializable {
 /******************RADIO BUTTON********************************************/
     @FXML
     public void gettype(ActionEvent event) {
-        if(presentiel.isSelected())
-            typeo=TypeO.presentiel;
-        else if(enligne.isSelected())
-            typeo=TypeO.enligne;
-    }
+     if (presentiel.isSelected()) {
+    typeo = "presentiel";
+} else if (enligne.isSelected()) {
+    typeo = "enligne";
+}};
 
 /*******************************************************************/
 
@@ -149,13 +151,18 @@ public class FXMLAjouterController implements Initializable {
         String localisation_offre=localisation.getText();   
         String nom_offre=nom.getText();        
 
-        type=TypeC.valueOf(tf_cat.getValue());       
+            
         String photo=selectedFile.getAbsolutePath();
+        if (presentiel.isSelected()) {
+    typeo = "presentiel";
+} else if (enligne.isSelected()) {
+    typeo = "enligne";
+}
         
-        Offres o=new Offres(id_user,prix_offre, description_offre, localisation_offre, nom_offre, photo,typeo, type);
+        Offres o=new Offres(id_user,prix_offre, description_offre, localisation_offre, nom_offre, photo,typeo );
         os.ajouter(o);
-        Notification();
-        
+//        Notification();
+//        
     }
 }
 /****************************************************************************************************************/
@@ -209,22 +216,22 @@ public boolean controleTextFieldNumerique(TextField textField) {
 /**
      * @throws java.sql.SQLException************************************************************************************************/
    
-  public void Notification() throws SQLException{
-        String req = "select * from offres where prix_offre ='"+prix.getText()+"' ";
-        stm = connexion.createStatement(); 
-        //ensemble de resultat
-        ResultSet rst = stm.executeQuery(req);
-        while (rst.next()) {
-        Notifications notifications=Notifications.create();
-        notifications.text(" Nom : "+rst.getString("nom_offre")+" \n Localisation: "+rst.getString("localisation_offre")+" \n Prix : "+rst.getDouble("prix_offre"));
-        notifications.title("Offre Enregistée");
-        notifications.hideAfter(Duration.seconds(10));
-        notifications.darkStyle();
-        notifications.position(Pos.BOTTOM_RIGHT);
-        notifications.show();
-        }   
-    
-  }
+//  public void Notification() throws SQLException{
+//        String req = "select * from offres where prix_offre ='"+prix.getText()+"' ";
+//        stm = connexion.createStatement(); 
+//        //ensemble de resultat
+//        ResultSet rst = stm.executeQuery(req);
+//        while (rst.next()) {
+//        Notifications notifications=Notifications.create();
+//        notifications.text(" Nom : "+rst.getString("nom_offre")+" \n Localisation: "+rst.getString("localisation_offre")+" \n Prix : "+rst.getDouble("prix_offre"));
+//        notifications.title("Offre Enregistée");
+//        notifications.hideAfter(Duration.seconds(10));
+//        notifications.darkStyle();
+//        notifications.position(Pos.BOTTOM_RIGHT);
+//        notifications.show();
+//        }   
+//    
+//  }
     
     
 }    

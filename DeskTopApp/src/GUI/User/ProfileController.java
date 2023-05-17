@@ -85,7 +85,7 @@ public class ProfileController implements Initializable {
         tfmail.setText(u.getEmail()); 
         tfnom_prenom.setText(u.getNom_user()+" "+u.getPrenom_user());
         
-        String path=u.getPhoto_user();
+        String path="/GUI/Images/"+u.getPhoto_user();
         Image img=new Image(getClass().getResourceAsStream(path));
         tfimg.setImage(img);
 	}

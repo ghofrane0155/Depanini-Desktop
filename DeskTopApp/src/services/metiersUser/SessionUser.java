@@ -25,11 +25,11 @@ public final class SessionUser {
     private static String email;
     private static String adresse;
     private static String tel;
-    private static Entity.Enum.Sexe sexe;
-    private static Entity.Enum.TypeR role;
+    private static String sexe;
+    private static String role;
     private static String photo_user;
 
-    private SessionUser(int id_user, String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, Enum.Sexe sexe, Enum.TypeR role, String photo_user) {
+    private SessionUser(int id_user, String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, String sexe, String role, String photo_user) {
         SessionUser.id_user = id_user;
         SessionUser.nom_user = nom_user;
         SessionUser.prenom_user = prenom_user;
@@ -44,7 +44,7 @@ public final class SessionUser {
         SessionUser.photo_user = photo_user;
     }
 /********************************************************************************/
-    public static SessionUser getInstace(int id_user, String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, Enum.Sexe sexe, Enum.TypeR role, String photo_user) {
+    public static SessionUser getInstace(int id_user, String nom_user, String prenom_user, String login, String mdp, Date date_nais_user, String email, String adresse, String tel, String sexe, String role, String photo_user) {
         if(instance == null) {
             instance = new SessionUser(id_user,nom_user,prenom_user,login,mdp,date_nais_user,email,adresse,tel,sexe,role,photo_user);
         }
@@ -91,11 +91,11 @@ public final class SessionUser {
         return tel;
     }
 
-    public static Enum.Sexe getSexe() {
+    public static String getSexe() {
         return sexe;
     }
 
-    public static Enum.TypeR getRole() {
+    public static String getRole() {
         return role;
     }
 
@@ -144,11 +144,11 @@ public final class SessionUser {
         SessionUser.tel = tel;
     }
 
-    public static void setSexe(Enum.Sexe sexe) {
+    public static void setSexe(String sexe) {
         SessionUser.sexe = sexe;
     }
 
-    public static void setRole(Enum.TypeR role) {
+    public static void setRole(String role) {
         SessionUser.role = role;
     }
 

@@ -63,28 +63,30 @@ public class FXMLModifierController implements Initializable {
     private RadioButton enligne;
     @FXML
     private Button modifier_offre;
+   
 /*************************************************/
-    Entity.Enum.TypeO typeo=null;
+  
      
-    ObservableList <String> typeList=FXCollections.observableArrayList("Informatique","Baby_sitting","Demenagement","Couture","Beaute","Traduction");
+ 
 
     OffresServices os=new OffresServices();
 /************************************************/    
-    @FXML
-    private ComboBox<String> tf_cat;
+   
     @FXML
     private ImageView img;
     @FXML
     private Button btn_img;
     @FXML
     private ImageView return_home;
+    
+    String typeo;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        tf_cat.setItems(typeList);
+        
          return_home.setOnMouseClicked(((event) -> {
             try {
                
@@ -101,13 +103,15 @@ public class FXMLModifierController implements Initializable {
         
 }
 
-    @FXML
-    private void gettype(ActionEvent event) {
-        if(presentiel.isSelected())
-            typeo=Entity.Enum.TypeO.presentiel;
-        else if(enligne.isSelected())
-            typeo=Entity.Enum.TypeO.enligne;
-    }
+  
+    
+     @FXML
+    public void gettype(ActionEvent event) {
+     if (presentiel.isSelected()) {
+    typeo = "presentiel";
+} else if (enligne.isSelected()) {
+    typeo = "enligne";
+}};
 /****************************************************************************/
     FileChooser fc;
     File selectedFile;
@@ -123,8 +127,9 @@ public class FXMLModifierController implements Initializable {
             o2.setDescription_offre(description.getText());
             o2.setLocation_offre(localisation.getText());
             o2.setNom_offre(nom.getText());
-            o2.setType_cat(Entity.Enum.TypeC.valueOf(tf_cat.getValue()));
+            
             o2.setImage_offre(selectedFile.getAbsolutePath());
+            
             o2.setType_offre(typeo);
 
             System.out.println(o2);

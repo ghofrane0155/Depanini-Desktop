@@ -1,6 +1,5 @@
 package GUI.User;
 
-import Entity.Enum.Sexe;
 import Entity.user;
 
 import services.metiersUser.Verif;
@@ -85,24 +84,24 @@ public class SettingsController extends ProfileController implements Initializab
         utilisateur=u;
         
         tfadr.setText(u.getAdresse());
-        labelsexe.setText(u.getSexe().toString());
+        labelsexe.setText(u.getSexe());
         
         labeldate.setText(u.getDate_nais_user().toString());
        
         tfnom_prenom.setText(u.getNom_user()+" "+u.getPrenom_user());
-        String path=u.getPhoto_user();
+        String path="/GUI/Images/"+u.getPhoto_user();
         Image img=new Image(getClass().getResourceAsStream(path));
         tfimg.setImage(img);
 	}
 
 /***************radio button type enum SEXE********************************/
-        Sexe gender=null;
+        String gender=null;
     @FXML
     private void getsexe(ActionEvent event) {
         if(btnfemme.isSelected())
-            gender=Entity.Enum.Sexe.valueOf(btnfemme.getText());
+            gender=btnfemme.getText();
         else if(btnhomme.isSelected())
-            gender=Entity.Enum.Sexe.valueOf(btnhomme.getText());      
+            gender=btnhomme.getText();      
     }
 /***********************************************************************/
           LocalDate localdate=null;

@@ -14,6 +14,7 @@ import java.util.Date;
 public class Produits {
 
     private int id_produits;
+    private int id_user;
     public String nom_produits, categorie_produits;
     public Double prix_produits;
     public String description;
@@ -32,6 +33,18 @@ public class Produits {
         this.description = description;
         this.id_produits = id_produits;
     }
+
+    public Produits(int id_user, String nom_produits, String categorie_produits, Double prix_produits, String description, String image_produits, int barecode) {
+        this.id_user = id_user;
+        this.nom_produits = nom_produits;
+        this.categorie_produits = categorie_produits;
+        this.prix_produits = prix_produits;
+        this.description = description;
+        this.image_produits = image_produits;
+        this.barecode = barecode;
+    }
+    
+    
     
 
     public Produits(/*int id_produits,*/String nom_produits) {
@@ -151,8 +164,9 @@ public Produits(int id_produits, String nom_produits, String categorie_produits,
         
     }
 
-    public Produits(String nom, String categorie, double prix, String desc, String pic, int parseInt) {
+    public Produits(int id_user,String nom, String categorie, double prix, String desc, String pic, int parseInt) {
      
+        this.id_user = id_user;
         this.nom_produits = nom;
         this.categorie_produits = categorie;
         this.prix_produits = prix;
@@ -171,6 +185,19 @@ public Produits(int id_produits, String nom_produits, String categorie_produits,
         this.barecode = barecode;
     }
 
+    public Produits(int id_produits, int id_user, String nom_produits, String categorie_produits, Double prix_produits, String description, String image_produits, int barecode) {
+        this.id_produits = id_produits;
+        this.id_user = id_user;
+        this.nom_produits = nom_produits;
+        this.categorie_produits = categorie_produits;
+        this.prix_produits = prix_produits;
+        this.description = description;
+        this.image_produits = image_produits;
+        this.barecode = barecode;
+    }
+
+    
+    
     
 
     
@@ -187,6 +214,16 @@ public Produits(int id_produits, String nom_produits, String categorie_produits,
     public void setId_produits(int id_produits) {
         this.id_produits = id_produits;
     }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+    
+    
 
     public String getNom_produits() {
         return nom_produits;
@@ -262,6 +299,7 @@ public Produits(int id_produits, String nom_produits, String categorie_produits,
     @Override
     public String toString() {
         return "\n---------\nproduits: " + "id_produits=" + id_produits
+                + "id_user=" + id_user
                 + ", nom_produits=" + nom_produits
                 + "\n categorie=" + categorie_produits
                 + ", prix=" + prix_produits

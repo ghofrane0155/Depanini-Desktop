@@ -70,7 +70,7 @@ public class PasswordController extends ProfileController implements Initializab
         utilisateur=u;
 
         tfnom_prenom.setText(u.getNom_user()+" "+u.getPrenom_user());
-        String path=u.getPhoto_user();
+        String path="/GUI/Images/"+u.getPhoto_user();
         Image img=new Image(getClass().getResourceAsStream(path));
         tfimg.setImage(img);
 	}
@@ -83,7 +83,9 @@ public class PasswordController extends ProfileController implements Initializab
         if(Verif.validatePass(pass))
             if(Verif.confirmPass(pass, pass2)){
                 
-                utilisateur.setMdp(hashPassword(pass));
+//                utilisateur.setPassword(hashPassword(pass));
+            utilisateur.setPassword(pass);
+
                 us.modifier(utilisateur);
                 showAlert(Alert.AlertType.INFORMATION, "Success", "Mot de passe a été modifier avec succès!", "");
             }

@@ -9,39 +9,39 @@ package Entity;
  *
  * @author yasmine
  */
-public class Demandes {
+public class Recrutements {
     private int reference ;
     private int idClient ;
-    private float budget ;
+    private float salaire ;
     private String date ;
     private String nom ;
-    private String description ; //description / cahier des charges (importer pdf)
+    private String description ; 
     
-        public Demandes(int reference,int idClient, float budget, String description, String date, String nom) {
+        public Recrutements(int reference,int idClient, float salaire, String description, String date, String nom) {
         this.reference = reference;
         this.idClient = idClient;
-        this.budget = budget;
+        this.salaire = salaire;
         this.description = description;
         this.date = date;
         this.nom = nom;
 
     }
-        public Demandes(int idClient, float budget, String description, String date,String nom) {
+        public Recrutements(int idClient, float salaire, String description, String date,String nom) {
         this.idClient = idClient;
-        this.budget = budget;
+        this.salaire = salaire;
         this.description = description;
         this.date = date;
         this.nom = nom;
     }
 
-    public Demandes(String nom, float budget, String date, String description) {
-        this.budget = budget;
+    public Recrutements(String nom, float salaire, String date, String description) {
+        this.salaire = salaire;
         this.description = description;
         this.date = date;
         this.nom = nom;    }
 
-    public Demandes(String nom, float budget, String description) {
- this.budget = budget;
+    public Recrutements(String nom, float salaire, String description) {
+ this.salaire = salaire;
         this.description = description;
         this.nom = nom;    }
     
@@ -61,12 +61,12 @@ public class Demandes {
         this.idClient = idClient;
     }
 
-    public float getBudget() {
-        return budget;
+    public float getSalaire() {
+        return salaire;
     }
 
-    public void setBudget(float budget) {
-        this.budget = budget;
+    public void setSalaire(float salaire) {
+        this.salaire = salaire;
     }
     
         public String getDescription() {
@@ -95,7 +95,7 @@ public class Demandes {
 
     @Override
     public String toString() {
-        return "Demande{" + "reference=" + reference + ", idClient=" + idClient + ", budget=" + budget + ", date=" + date + ", description=" + description + '}';
+        return "Demande{" + "reference=" + reference + ", idClient=" + idClient + ", salaire=" + salaire + ", date=" + date + ", description=" + description + '}';
     }
 
 

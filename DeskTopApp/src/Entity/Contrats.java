@@ -10,65 +10,63 @@ package Entity;
  * @author yasmine
  */
 public class Contrats {
-    int IDContrat;
-    int cin;
-    String nom_offre;
+    int id_contrat;
+    int reference;
+    String etat;
     String date;
-    String description;
-    double price;
+    String conditions;
 
-    public Contrats(int cin) {
-        this.cin = cin;
+    public Contrats(int reference) {
+        this.reference = reference;
     }
 
-    public Contrats(String nom_offre,String date,  String description,Double price,int cin) {
-        this.cin = cin;
-                this.price = price;
-        this.nom_offre = nom_offre;
+    public Contrats(String etat,String date,  String conditions,Double price,int reference) {
+        this.reference = reference;
+        this.etat = etat;
         this.date = date;
-        this.description = description;
+        this.conditions = conditions;
     }
-       public Contrats(int cin,String date,String nom_offre,  String description) {
-        this.cin = cin;
-        this.nom_offre = nom_offre;
+       public Contrats(int reference,String date,String etat,  String conditions) {
+        this.reference = reference;
+        this.etat = etat;
         this.date = date;
-        this.description = description;
+        this.conditions = conditions;
     }
 
-    public Contrats(int IDContrat, int cin, String date, String nom_offre, String description) {
-        this.IDContrat=IDContrat;
-         this.cin = cin;
-        this.nom_offre = nom_offre;
+    public Contrats(int id_contrat, int reference, String date, String etat, String conditions) {
+        this.id_contrat=id_contrat;
+         this.reference = reference;
+        this.etat = etat;
         this.date = date;
-        this.description = description;    }
+        this.conditions = conditions;    }
 
-    public Contrats(int IDContrat, int cin) {
-         this.IDContrat=IDContrat;
-         this.cin = cin;
+    public Contrats(int id_contrat, int reference) {
+         this.id_contrat=id_contrat;
+         this.reference = reference;
     }
 
     public int getIDContrat() {
-        return IDContrat;
+        return id_contrat;
     }
 
-    public void setIDContrat(int IDContrat) {
-        this.IDContrat = IDContrat;
+    public void setIDContrat(int id_contrat) {
+        this.id_contrat = id_contrat;
     }
 
-    public int getCin() {
-        return cin;
+    public int getReference() {
+        return reference;
     }
 
-    public void setCin(int cin) {
-        this.cin = cin;
+    public void setReference(int reference) {
+        this.reference = reference;
     }
 
-    public String getNom_offre() {
-        return nom_offre;
+    public String getEtat() {
+        return etat;
     }
 
-    public void setNom_offre(String nom_offre) {
-        this.nom_offre = nom_offre;
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     public String getDate() {
@@ -79,42 +77,33 @@ public class Contrats {
         this.date = date;
     }
 
-    public String getDescription() {
-        return description;
+    public String getConditions() {
+        return conditions;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setConditions(String conditions) {
+        this.conditions = conditions;
     }
 
-    public double getPrice() {
-        return price;
-    }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public Contrats(int IDContrat, int cin, String nom_offre, String date, String description, double price) {
-        this.IDContrat = IDContrat;
-        this.cin = cin;
-        this.nom_offre = nom_offre;
+    public Contrats(int id_contrat, int reference, String etat, String date, String conditions, double price) {
+        this.id_contrat = id_contrat;
+        this.reference = reference;
+        this.etat = etat;
         this.date = date;
-        this.description = description;
-        this.price = price;
+        this.conditions = conditions;
     }
 
-    public Contrats(int cin, String nom_offre, String date, String description, double price) {
-        this.cin = cin;
-        this.nom_offre = nom_offre;
+    public Contrats(int reference, String etat, String date, String conditions, double price) {
+        this.reference = reference;
+        this.etat = etat;
         this.date = date;
-        this.description = description;
-        this.price = price;
+        this.conditions = conditions;
     }
 
     @Override
     public String toString() {
-        return "Contrats{" + "IDContrat=" + IDContrat + ", cin=" + cin + ", nom_offre=" + nom_offre + ", date=" + date + ", description=" + description + ", price=" + price + '}';
+        return "Contrats{" + "id_contrat=" + id_contrat + ", reference=" + reference + ", etat=" + etat + ", date=" + date + ", conditions=" + conditions +  '}';
     }
 
 

@@ -83,7 +83,7 @@ public class FXMLUpdateReclamationController implements Initializable {
        
         //recuperation id_user appartir de l'email
         String email_user = "";
-        String req2 = "Select `email` from `users` where id_user=" + r.getId_user();
+        String req2 = "Select email from users where id_user=" + r.getId_user();
 
         Statement stm;
         try {
@@ -114,7 +114,7 @@ public class FXMLUpdateReclamationController implements Initializable {
         date_debut_reclamation.setValue(date);
         date_debut_reclamation.setDisable(true);
 
-        type_reclamation.setText(r.getType().getLabel());
+        type_reclamation.setText(r.getType().toString());
         type_reclamation.setDisable(true);
 
         description.setText(r.getDescription());

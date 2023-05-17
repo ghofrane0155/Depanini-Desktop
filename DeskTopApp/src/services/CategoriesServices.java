@@ -30,7 +30,7 @@ public class CategoriesServices implements ICRUD <Categories>{
     
     @Override
     public void ajouter(Categories t) throws SQLException {
-        String requete = "insert into categories (id_cat,nom_cat,image_cat) values "
+        String requete = "insert into categories (id_categorie,nom_categorie,image_categorie) values "
                 + "(" + t.getId_categorie()+ ",'" + t.getNom_categorie()+ "','" + t.getImage_categorie()+"')";
         
         stm = (Statement) connexion.createStatement();  
@@ -39,14 +39,14 @@ public class CategoriesServices implements ICRUD <Categories>{
 /************************************************************************************/
     @Override
     public void supprimer(int id) throws SQLException {
-        String requete = "DELETE FROM categories where id_cat="+id;
+        String requete = "DELETE FROM categories where id_categorie="+id;
         
         stm = (Statement) connexion.createStatement();  
         stm.executeUpdate(requete);    }
 /************************************************************************************/
     @Override
     public void modifier(Categories t) throws SQLException {
-         String requete = "UPDATE categories set id_cat="+t.getId_categorie()+",nom_cat='"+t.getNom_categorie()+"',image_cat='"+t.getImage_categorie()+"' WHERE id_cat="+t.getId_categorie();
+         String requete = "UPDATE categories set id_categorie="+t.getId_categorie()+",nom_categorie='"+t.getNom_categorie()+"',image_categorie='"+t.getImage_categorie()+"' WHERE id_categorie="+t.getId_categorie();
               
         stm = (Statement) connexion.createStatement();  
         stm.executeUpdate(requete);
@@ -73,7 +73,7 @@ public class CategoriesServices implements ICRUD <Categories>{
     public Categories afficherById(int id) throws SQLException {
         Categories cat = null ;
         
-        String req = "select * from categories where id_cat="+id;
+        String req = "select * from categories where id_categorie="+id;
         stm = (Statement) connexion.createStatement();
         
         //ensemble de resultat

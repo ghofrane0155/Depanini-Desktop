@@ -44,17 +44,18 @@ public class ProduitsService implements Iproduits<Produits> {
             Statement stmt = connexion.createStatement(); //auto increment
         
 //        stmt.execute("alter table produits AUTO_INCREMENT = 1"); //auto increment
-        String req = "INSERT INTO `produits` (`nom_produit`, `categorie_produit`, `prix_produit`, `description`, `date_creation`, `image_produit`, `barecode`) VALUES (?, ?, ?, ?, ?, ?, ?) ";
+        String req = "INSERT INTO produits (id_user,`nom_produit`, categorie_produit, prix_produit, description, date_creation, image_produit, barecode) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
         PreparedStatement pr;
         pr = connexion.prepareStatement(req,Statement.RETURN_GENERATED_KEYS); // statement.return_generated_keys teeb3a l auto increment
         // pr.setInt(1, p.getId_produits());
-        pr.setString(1, p.getNom_produits());
-        pr.setString(2, p.getCategorie_produits());
-        pr.setDouble(3, p.getPrix_produits());
-        pr.setString(4, p.getDescription()); //normalement text
-        pr.setDate(5, (java.sql.Date) p.getDate_creation());     
-        pr.setString(6, p.getImage());
-        pr.setInt(7, p.getBarecode());
+         pr.setInt(1, p.getId_user());
+        pr.setString(2, p.getNom_produits());
+        pr.setString(3, p.getCategorie_produits());
+        pr.setDouble(4, p.getPrix_produits());
+        pr.setString(5, p.getDescription()); //normalement text
+        pr.setDate(6, (java.sql.Date) p.getDate_creation());     
+        pr.setString(7, p.getImage());
+        pr.setInt(8, p.getBarecode());
        // pr.addBatch();
         System.out.println(pr);
         pr.executeUpdate();
@@ -107,8 +108,8 @@ public class ProduitsService implements Iproduits<Produits> {
     public void modifierproduit(Produits p) throws SQLException {
        try{
            
-//           "UPDATE  Produits SET `nom_produit`=?, `categorie_produit`=?, `prix_produit`=?,`description`=?, `date_creation`=?, `image_produit`=? WHERE `id_produit`= ? "
-         String req = "UPDATE  produits SET `nom_produit`=?, `categorie_produit`=?, `prix_produit`=?,`description`=?, `date_creation`=? WHERE `id_produit`= ? " ;
+//           "UPDATE  Produits SET nom_produit`=?, categorie_produit`=?, prix_produit`=?,description`=?, date_creation`=?, image_produit`=? WHERE `id_produit`= ? "
+         String req = "UPDATE  produits SET nom_produit`=?, categorie_produit`=?, prix_produit`=?,description`=?, date_creation`=? WHERE id_produit`= ? " ;
             
         PreparedStatement pr = connexion.prepareStatement(req);
        
